@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.cwl.staremployeesMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.cwl.staremployees" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="starLevel" property="starlevel" jdbcType="INTEGER" />
+    <result column="level" property="level" jdbcType="INTEGER" />
+    <result column="cutTheWeight" property="cuttheweight" jdbcType="REAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, starLevel, level, cutTheWeight
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from staremployees
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from staremployees
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.cwl.staremployees" >
+    insert into staremployees (id, starLevel, level, 
+      cutTheWeight)
+    values (#{id,jdbcType=INTEGER}, #{starlevel,jdbcType=INTEGER}, #{level,jdbcType=INTEGER}, 
+      #{cuttheweight,jdbcType=REAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.cwl.staremployees" >
+    insert into staremployees
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="starlevel != null" >
+        starLevel,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="cuttheweight != null" >
+        cutTheWeight,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="starlevel != null" >
+        #{starlevel,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="cuttheweight != null" >
+        #{cuttheweight,jdbcType=REAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.cwl.staremployees" >
+    update staremployees
+    <set >
+      <if test="starlevel != null" >
+        starLevel = #{starlevel,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="cuttheweight != null" >
+        cutTheWeight = #{cuttheweight,jdbcType=REAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.cwl.staremployees" >
+    update staremployees
+    set starLevel = #{starlevel,jdbcType=INTEGER},
+      level = #{level,jdbcType=INTEGER},
+      cutTheWeight = #{cuttheweight,jdbcType=REAL}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.cwl.OffSiteRescueSheetMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.cwl.OffSiteRescueSheet" >
+    <id column="oddNumber" property="oddnumber" jdbcType="VARCHAR" />
+    <result column="carNumbers" property="carnumbers" jdbcType="VARCHAR" />
+    <result column="carType" property="cartype" jdbcType="VARCHAR" />
+    <result column="bland" property="bland" jdbcType="VARCHAR" />
+    <result column="engineBrand" property="enginebrand" jdbcType="VARCHAR" />
+    <result column="VIN" property="vin" jdbcType="VARCHAR" />
+    <result column="engineNumber" property="enginenumber" jdbcType="VARCHAR" />
+    <result column="server" property="server" jdbcType="VARCHAR" />
+    <result column="carOwnName" property="carownname" jdbcType="VARCHAR" />
+    <result column="driver" property="driver" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="milesIntoTheFactory" property="milesintothefactory" jdbcType="REAL" />
+    <result column="oilIntoTheFactory" property="oilintothefactory" jdbcType="REAL" />
+    <result column="theLastTimeTheMileage" property="thelasttimethemileage" jdbcType="REAL" />
+    <result column="timeIntoTheFactory" property="timeintothefactory" jdbcType="REAL" />
+    <result column="classOfBusiness" property="classofbusiness" jdbcType="VARCHAR" />
+    <result column="constructionDivisions" property="constructiondivisions" jdbcType="VARCHAR" />
+    <result column="pickOne" property="pickone" jdbcType="VARCHAR" />
+    <result column="expectedCompletion" property="expectedcompletion" jdbcType="DATE" />
+    <result column="clearingForm" property="clearingform" jdbcType="VARCHAR" />
+    <result column="indemnityCompany" property="indemnitycompany" jdbcType="VARCHAR" />
+    <result column="theLasTtimeIntoTheFactory" property="thelasttimeintothefactory" jdbcType="DATE" />
+    <result column="receptionNote" property="receptionnote" jdbcType="VARCHAR" />
+    <result column="repairStatement" property="repairstatement" jdbcType="VARCHAR" />
+    <result column="rescueTheAddress" property="rescuetheaddress" jdbcType="VARCHAR" />
+    <result column="timeOfCompletion" property="timeofcompletion" jdbcType="DATE" />
+    <result column="estimatedAmount" property="estimatedamount" jdbcType="REAL" />
+    <result column="maintenanceNote" property="maintenancenote" jdbcType="VARCHAR" />
+    <result column="rescueStatement" property="rescuestatement" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    oddNumber, carNumbers, carType, bland, engineBrand, VIN, engineNumber, server, carOwnName, 
+    driver, phone, milesIntoTheFactory, oilIntoTheFactory, theLastTimeTheMileage, timeIntoTheFactory, 
+    classOfBusiness, constructionDivisions, pickOne, expectedCompletion, clearingForm, 
+    indemnityCompany, theLasTtimeIntoTheFactory, receptionNote, repairStatement, rescueTheAddress, 
+    timeOfCompletion, estimatedAmount, maintenanceNote, rescueStatement
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from offsiterescuesheet
+    where oddNumber = #{oddnumber,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from offsiterescuesheet
+    where oddNumber = #{oddnumber,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.cwl.OffSiteRescueSheet" >
+    insert into offsiterescuesheet (oddNumber, carNumbers, carType, 
+      bland, engineBrand, VIN, 
+      engineNumber, server, carOwnName, 
+      driver, phone, milesIntoTheFactory, 
+      oilIntoTheFactory, theLastTimeTheMileage, timeIntoTheFactory, 
+      classOfBusiness, constructionDivisions, 
+      pickOne, expectedCompletion, clearingForm, 
+      indemnityCompany, theLasTtimeIntoTheFactory, 
+      receptionNote, repairStatement, rescueTheAddress, 
+      timeOfCompletion, estimatedAmount, maintenanceNote, 
+      rescueStatement)
+    values (#{oddnumber,jdbcType=VARCHAR}, #{carnumbers,jdbcType=VARCHAR}, #{cartype,jdbcType=VARCHAR}, 
+      #{bland,jdbcType=VARCHAR}, #{enginebrand,jdbcType=VARCHAR}, #{vin,jdbcType=VARCHAR}, 
+      #{enginenumber,jdbcType=VARCHAR}, #{server,jdbcType=VARCHAR}, #{carownname,jdbcType=VARCHAR}, 
+      #{driver,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{milesintothefactory,jdbcType=REAL}, 
+      #{oilintothefactory,jdbcType=REAL}, #{thelasttimethemileage,jdbcType=REAL}, #{timeintothefactory,jdbcType=REAL}, 
+      #{classofbusiness,jdbcType=VARCHAR}, #{constructiondivisions,jdbcType=VARCHAR}, 
+      #{pickone,jdbcType=VARCHAR}, #{expectedcompletion,jdbcType=DATE}, #{clearingform,jdbcType=VARCHAR}, 
+      #{indemnitycompany,jdbcType=VARCHAR}, #{thelasttimeintothefactory,jdbcType=DATE}, 
+      #{receptionnote,jdbcType=VARCHAR}, #{repairstatement,jdbcType=VARCHAR}, #{rescuetheaddress,jdbcType=VARCHAR}, 
+      #{timeofcompletion,jdbcType=DATE}, #{estimatedamount,jdbcType=REAL}, #{maintenancenote,jdbcType=VARCHAR}, 
+      #{rescuestatement,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.cwl.OffSiteRescueSheet" >
+    insert into offsiterescuesheet
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="oddnumber != null" >
+        oddNumber,
+      </if>
+      <if test="carnumbers != null" >
+        carNumbers,
+      </if>
+      <if test="cartype != null" >
+        carType,
+      </if>
+      <if test="bland != null" >
+        bland,
+      </if>
+      <if test="enginebrand != null" >
+        engineBrand,
+      </if>
+      <if test="vin != null" >
+        VIN,
+      </if>
+      <if test="enginenumber != null" >
+        engineNumber,
+      </if>
+      <if test="server != null" >
+        server,
+      </if>
+      <if test="carownname != null" >
+        carOwnName,
+      </if>
+      <if test="driver != null" >
+        driver,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="milesintothefactory != null" >
+        milesIntoTheFactory,
+      </if>
+      <if test="oilintothefactory != null" >
+        oilIntoTheFactory,
+      </if>
+      <if test="thelasttimethemileage != null" >
+        theLastTimeTheMileage,
+      </if>
+      <if test="timeintothefactory != null" >
+        timeIntoTheFactory,
+      </if>
+      <if test="classofbusiness != null" >
+        classOfBusiness,
+      </if>
+      <if test="constructiondivisions != null" >
+        constructionDivisions,
+      </if>
+      <if test="pickone != null" >
+        pickOne,
+      </if>
+      <if test="expectedcompletion != null" >
+        expectedCompletion,
+      </if>
+      <if test="clearingform != null" >
+        clearingForm,
+      </if>
+      <if test="indemnitycompany != null" >
+        indemnityCompany,
+      </if>
+      <if test="thelasttimeintothefactory != null" >
+        theLasTtimeIntoTheFactory,
+      </if>
+      <if test="receptionnote != null" >
+        receptionNote,
+      </if>
+      <if test="repairstatement != null" >
+        repairStatement,
+      </if>
+      <if test="rescuetheaddress != null" >
+        rescueTheAddress,
+      </if>
+      <if test="timeofcompletion != null" >
+        timeOfCompletion,
+      </if>
+      <if test="estimatedamount != null" >
+        estimatedAmount,
+      </if>
+      <if test="maintenancenote != null" >
+        maintenanceNote,
+      </if>
+      <if test="rescuestatement != null" >
+        rescueStatement,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="oddnumber != null" >
+        #{oddnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="carnumbers != null" >
+        #{carnumbers,jdbcType=VARCHAR},
+      </if>
+      <if test="cartype != null" >
+        #{cartype,jdbcType=VARCHAR},
+      </if>
+      <if test="bland != null" >
+        #{bland,jdbcType=VARCHAR},
+      </if>
+      <if test="enginebrand != null" >
+        #{enginebrand,jdbcType=VARCHAR},
+      </if>
+      <if test="vin != null" >
+        #{vin,jdbcType=VARCHAR},
+      </if>
+      <if test="enginenumber != null" >
+        #{enginenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="server != null" >
+        #{server,jdbcType=VARCHAR},
+      </if>
+      <if test="carownname != null" >
+        #{carownname,jdbcType=VARCHAR},
+      </if>
+      <if test="driver != null" >
+        #{driver,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="milesintothefactory != null" >
+        #{milesintothefactory,jdbcType=REAL},
+      </if>
+      <if test="oilintothefactory != null" >
+        #{oilintothefactory,jdbcType=REAL},
+      </if>
+      <if test="thelasttimethemileage != null" >
+        #{thelasttimethemileage,jdbcType=REAL},
+      </if>
+      <if test="timeintothefactory != null" >
+        #{timeintothefactory,jdbcType=REAL},
+      </if>
+      <if test="classofbusiness != null" >
+        #{classofbusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="constructiondivisions != null" >
+        #{constructiondivisions,jdbcType=VARCHAR},
+      </if>
+      <if test="pickone != null" >
+        #{pickone,jdbcType=VARCHAR},
+      </if>
+      <if test="expectedcompletion != null" >
+        #{expectedcompletion,jdbcType=DATE},
+      </if>
+      <if test="clearingform != null" >
+        #{clearingform,jdbcType=VARCHAR},
+      </if>
+      <if test="indemnitycompany != null" >
+        #{indemnitycompany,jdbcType=VARCHAR},
+      </if>
+      <if test="thelasttimeintothefactory != null" >
+        #{thelasttimeintothefactory,jdbcType=DATE},
+      </if>
+      <if test="receptionnote != null" >
+        #{receptionnote,jdbcType=VARCHAR},
+      </if>
+      <if test="repairstatement != null" >
+        #{repairstatement,jdbcType=VARCHAR},
+      </if>
+      <if test="rescuetheaddress != null" >
+        #{rescuetheaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="timeofcompletion != null" >
+        #{timeofcompletion,jdbcType=DATE},
+      </if>
+      <if test="estimatedamount != null" >
+        #{estimatedamount,jdbcType=REAL},
+      </if>
+      <if test="maintenancenote != null" >
+        #{maintenancenote,jdbcType=VARCHAR},
+      </if>
+      <if test="rescuestatement != null" >
+        #{rescuestatement,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.cwl.OffSiteRescueSheet" >
+    update offsiterescuesheet
+    <set >
+      <if test="carnumbers != null" >
+        carNumbers = #{carnumbers,jdbcType=VARCHAR},
+      </if>
+      <if test="cartype != null" >
+        carType = #{cartype,jdbcType=VARCHAR},
+      </if>
+      <if test="bland != null" >
+        bland = #{bland,jdbcType=VARCHAR},
+      </if>
+      <if test="enginebrand != null" >
+        engineBrand = #{enginebrand,jdbcType=VARCHAR},
+      </if>
+      <if test="vin != null" >
+        VIN = #{vin,jdbcType=VARCHAR},
+      </if>
+      <if test="enginenumber != null" >
+        engineNumber = #{enginenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="server != null" >
+        server = #{server,jdbcType=VARCHAR},
+      </if>
+      <if test="carownname != null" >
+        carOwnName = #{carownname,jdbcType=VARCHAR},
+      </if>
+      <if test="driver != null" >
+        driver = #{driver,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="milesintothefactory != null" >
+        milesIntoTheFactory = #{milesintothefactory,jdbcType=REAL},
+      </if>
+      <if test="oilintothefactory != null" >
+        oilIntoTheFactory = #{oilintothefactory,jdbcType=REAL},
+      </if>
+      <if test="thelasttimethemileage != null" >
+        theLastTimeTheMileage = #{thelasttimethemileage,jdbcType=REAL},
+      </if>
+      <if test="timeintothefactory != null" >
+        timeIntoTheFactory = #{timeintothefactory,jdbcType=REAL},
+      </if>
+      <if test="classofbusiness != null" >
+        classOfBusiness = #{classofbusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="constructiondivisions != null" >
+        constructionDivisions = #{constructiondivisions,jdbcType=VARCHAR},
+      </if>
+      <if test="pickone != null" >
+        pickOne = #{pickone,jdbcType=VARCHAR},
+      </if>
+      <if test="expectedcompletion != null" >
+        expectedCompletion = #{expectedcompletion,jdbcType=DATE},
+      </if>
+      <if test="clearingform != null" >
+        clearingForm = #{clearingform,jdbcType=VARCHAR},
+      </if>
+      <if test="indemnitycompany != null" >
+        indemnityCompany = #{indemnitycompany,jdbcType=VARCHAR},
+      </if>
+      <if test="thelasttimeintothefactory != null" >
+        theLasTtimeIntoTheFactory = #{thelasttimeintothefactory,jdbcType=DATE},
+      </if>
+      <if test="receptionnote != null" >
+        receptionNote = #{receptionnote,jdbcType=VARCHAR},
+      </if>
+      <if test="repairstatement != null" >
+        repairStatement = #{repairstatement,jdbcType=VARCHAR},
+      </if>
+      <if test="rescuetheaddress != null" >
+        rescueTheAddress = #{rescuetheaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="timeofcompletion != null" >
+        timeOfCompletion = #{timeofcompletion,jdbcType=DATE},
+      </if>
+      <if test="estimatedamount != null" >
+        estimatedAmount = #{estimatedamount,jdbcType=REAL},
+      </if>
+      <if test="maintenancenote != null" >
+        maintenanceNote = #{maintenancenote,jdbcType=VARCHAR},
+      </if>
+      <if test="rescuestatement != null" >
+        rescueStatement = #{rescuestatement,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where oddNumber = #{oddnumber,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.cwl.OffSiteRescueSheet" >
+    update offsiterescuesheet
+    set carNumbers = #{carnumbers,jdbcType=VARCHAR},
+      carType = #{cartype,jdbcType=VARCHAR},
+      bland = #{bland,jdbcType=VARCHAR},
+      engineBrand = #{enginebrand,jdbcType=VARCHAR},
+      VIN = #{vin,jdbcType=VARCHAR},
+      engineNumber = #{enginenumber,jdbcType=VARCHAR},
+      server = #{server,jdbcType=VARCHAR},
+      carOwnName = #{carownname,jdbcType=VARCHAR},
+      driver = #{driver,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      milesIntoTheFactory = #{milesintothefactory,jdbcType=REAL},
+      oilIntoTheFactory = #{oilintothefactory,jdbcType=REAL},
+      theLastTimeTheMileage = #{thelasttimethemileage,jdbcType=REAL},
+      timeIntoTheFactory = #{timeintothefactory,jdbcType=REAL},
+      classOfBusiness = #{classofbusiness,jdbcType=VARCHAR},
+      constructionDivisions = #{constructiondivisions,jdbcType=VARCHAR},
+      pickOne = #{pickone,jdbcType=VARCHAR},
+      expectedCompletion = #{expectedcompletion,jdbcType=DATE},
+      clearingForm = #{clearingform,jdbcType=VARCHAR},
+      indemnityCompany = #{indemnitycompany,jdbcType=VARCHAR},
+      theLasTtimeIntoTheFactory = #{thelasttimeintothefactory,jdbcType=DATE},
+      receptionNote = #{receptionnote,jdbcType=VARCHAR},
+      repairStatement = #{repairstatement,jdbcType=VARCHAR},
+      rescueTheAddress = #{rescuetheaddress,jdbcType=VARCHAR},
+      timeOfCompletion = #{timeofcompletion,jdbcType=DATE},
+      estimatedAmount = #{estimatedamount,jdbcType=REAL},
+      maintenanceNote = #{maintenancenote,jdbcType=VARCHAR},
+      rescueStatement = #{rescuestatement,jdbcType=VARCHAR}
+    where oddNumber = #{oddnumber,jdbcType=VARCHAR}
+  </update>
+</mapper>

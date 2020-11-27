@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.cwl.maintenanceitemsMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.cwl.maintenanceitems" >
+    <id column="oid" property="oid" jdbcType="VARCHAR" />
+    <result column="oName" property="oname" jdbcType="VARCHAR" />
+    <result column="number" property="number" jdbcType="REAL" />
+    <result column="priceClass" property="priceclass" jdbcType="VARCHAR" />
+    <result column="unitPrice" property="unitprice" jdbcType="REAL" />
+    <result column="money" property="money" jdbcType="REAL" />
+    <result column="settlementPrice" property="settlementprice" jdbcType="REAL" />
+    <result column="errorDesc" property="errordesc" jdbcType="VARCHAR" />
+    <result column="errorCause" property="errorcause" jdbcType="VARCHAR" />
+    <result column="theMaintenanceCrew" property="themaintenancecrew" jdbcType="VARCHAR" />
+    <result column="busyWorkGroup" property="busyworkgroup" jdbcType="VARCHAR" />
+    <result column="server" property="server" jdbcType="VARCHAR" />
+    <result column="workOrderNumber" property="workordernumber" jdbcType="VARCHAR" />
+    <result column="freeOfChargeFor" property="freeofchargefor" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    oid, oName, number, priceClass, unitPrice, money, settlementPrice, errorDesc, errorCause, 
+    theMaintenanceCrew, busyWorkGroup, server, workOrderNumber, freeOfChargeFor
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from maintenanceitems
+    where oid = #{oid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from maintenanceitems
+    where oid = #{oid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.cwl.maintenanceitems" >
+    insert into maintenanceitems (oid, oName, number, 
+      priceClass, unitPrice, money, 
+      settlementPrice, errorDesc, errorCause, 
+      theMaintenanceCrew, busyWorkGroup, server, 
+      workOrderNumber, freeOfChargeFor)
+    values (#{oid,jdbcType=VARCHAR}, #{oname,jdbcType=VARCHAR}, #{number,jdbcType=REAL}, 
+      #{priceclass,jdbcType=VARCHAR}, #{unitprice,jdbcType=REAL}, #{money,jdbcType=REAL}, 
+      #{settlementprice,jdbcType=REAL}, #{errordesc,jdbcType=VARCHAR}, #{errorcause,jdbcType=VARCHAR}, 
+      #{themaintenancecrew,jdbcType=VARCHAR}, #{busyworkgroup,jdbcType=VARCHAR}, #{server,jdbcType=VARCHAR}, 
+      #{workordernumber,jdbcType=VARCHAR}, #{freeofchargefor,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.cwl.maintenanceitems" >
+    insert into maintenanceitems
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="oid != null" >
+        oid,
+      </if>
+      <if test="oname != null" >
+        oName,
+      </if>
+      <if test="number != null" >
+        number,
+      </if>
+      <if test="priceclass != null" >
+        priceClass,
+      </if>
+      <if test="unitprice != null" >
+        unitPrice,
+      </if>
+      <if test="money != null" >
+        money,
+      </if>
+      <if test="settlementprice != null" >
+        settlementPrice,
+      </if>
+      <if test="errordesc != null" >
+        errorDesc,
+      </if>
+      <if test="errorcause != null" >
+        errorCause,
+      </if>
+      <if test="themaintenancecrew != null" >
+        theMaintenanceCrew,
+      </if>
+      <if test="busyworkgroup != null" >
+        busyWorkGroup,
+      </if>
+      <if test="server != null" >
+        server,
+      </if>
+      <if test="workordernumber != null" >
+        workOrderNumber,
+      </if>
+      <if test="freeofchargefor != null" >
+        freeOfChargeFor,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="oid != null" >
+        #{oid,jdbcType=VARCHAR},
+      </if>
+      <if test="oname != null" >
+        #{oname,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=REAL},
+      </if>
+      <if test="priceclass != null" >
+        #{priceclass,jdbcType=VARCHAR},
+      </if>
+      <if test="unitprice != null" >
+        #{unitprice,jdbcType=REAL},
+      </if>
+      <if test="money != null" >
+        #{money,jdbcType=REAL},
+      </if>
+      <if test="settlementprice != null" >
+        #{settlementprice,jdbcType=REAL},
+      </if>
+      <if test="errordesc != null" >
+        #{errordesc,jdbcType=VARCHAR},
+      </if>
+      <if test="errorcause != null" >
+        #{errorcause,jdbcType=VARCHAR},
+      </if>
+      <if test="themaintenancecrew != null" >
+        #{themaintenancecrew,jdbcType=VARCHAR},
+      </if>
+      <if test="busyworkgroup != null" >
+        #{busyworkgroup,jdbcType=VARCHAR},
+      </if>
+      <if test="server != null" >
+        #{server,jdbcType=VARCHAR},
+      </if>
+      <if test="workordernumber != null" >
+        #{workordernumber,jdbcType=VARCHAR},
+      </if>
+      <if test="freeofchargefor != null" >
+        #{freeofchargefor,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.cwl.maintenanceitems" >
+    update maintenanceitems
+    <set >
+      <if test="oname != null" >
+        oName = #{oname,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        number = #{number,jdbcType=REAL},
+      </if>
+      <if test="priceclass != null" >
+        priceClass = #{priceclass,jdbcType=VARCHAR},
+      </if>
+      <if test="unitprice != null" >
+        unitPrice = #{unitprice,jdbcType=REAL},
+      </if>
+      <if test="money != null" >
+        money = #{money,jdbcType=REAL},
+      </if>
+      <if test="settlementprice != null" >
+        settlementPrice = #{settlementprice,jdbcType=REAL},
+      </if>
+      <if test="errordesc != null" >
+        errorDesc = #{errordesc,jdbcType=VARCHAR},
+      </if>
+      <if test="errorcause != null" >
+        errorCause = #{errorcause,jdbcType=VARCHAR},
+      </if>
+      <if test="themaintenancecrew != null" >
+        theMaintenanceCrew = #{themaintenancecrew,jdbcType=VARCHAR},
+      </if>
+      <if test="busyworkgroup != null" >
+        busyWorkGroup = #{busyworkgroup,jdbcType=VARCHAR},
+      </if>
+      <if test="server != null" >
+        server = #{server,jdbcType=VARCHAR},
+      </if>
+      <if test="workordernumber != null" >
+        workOrderNumber = #{workordernumber,jdbcType=VARCHAR},
+      </if>
+      <if test="freeofchargefor != null" >
+        freeOfChargeFor = #{freeofchargefor,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where oid = #{oid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.cwl.maintenanceitems" >
+    update maintenanceitems
+    set oName = #{oname,jdbcType=VARCHAR},
+      number = #{number,jdbcType=REAL},
+      priceClass = #{priceclass,jdbcType=VARCHAR},
+      unitPrice = #{unitprice,jdbcType=REAL},
+      money = #{money,jdbcType=REAL},
+      settlementPrice = #{settlementprice,jdbcType=REAL},
+      errorDesc = #{errordesc,jdbcType=VARCHAR},
+      errorCause = #{errorcause,jdbcType=VARCHAR},
+      theMaintenanceCrew = #{themaintenancecrew,jdbcType=VARCHAR},
+      busyWorkGroup = #{busyworkgroup,jdbcType=VARCHAR},
+      server = #{server,jdbcType=VARCHAR},
+      workOrderNumber = #{workordernumber,jdbcType=VARCHAR},
+      freeOfChargeFor = #{freeofchargefor,jdbcType=VARCHAR}
+    where oid = #{oid,jdbcType=VARCHAR}
+  </update>
+</mapper>

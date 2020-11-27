@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.cwl.shiftthemechanicMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.cwl.shiftthemechanic" >
+    <id column="mID" property="mid" jdbcType="INTEGER" />
+    <result column="mName" property="mname" jdbcType="VARCHAR" />
+    <result column="aID" property="aid" jdbcType="VARCHAR" />
+    <result column="aName" property="aname" jdbcType="VARCHAR" />
+    <result column="aSex" property="asex" jdbcType="VARCHAR" />
+    <result column="aPhone" property="aphone" jdbcType="VARCHAR" />
+    <result column="aAddress" property="aaddress" jdbcType="VARCHAR" />
+    <result column="aBronDate" property="abrondate" jdbcType="DATE" />
+    <result column="isGroupLeader" property="isgroupleader" jdbcType="BIT" />
+    <result column="loginAccount" property="loginaccount" jdbcType="VARCHAR" />
+    <result column="weChatAccount" property="wechataccount" jdbcType="VARCHAR" />
+    <result column="idCard" property="idcard" jdbcType="VARCHAR" />
+    <result column="residence" property="residence" jdbcType="VARCHAR" />
+    <result column="depositBank" property="depositbank" jdbcType="VARCHAR" />
+    <result column="starLevel" property="starlevel" jdbcType="INTEGER" />
+    <result column="maintenanceAndRepairWork" property="maintenanceandrepairwork" jdbcType="VARCHAR" />
+    <result column="brandMaintain" property="brandmaintain" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    mID, mName, aID, aName, aSex, aPhone, aAddress, aBronDate, isGroupLeader, loginAccount, 
+    weChatAccount, idCard, residence, depositBank, starLevel, maintenanceAndRepairWork, 
+    brandMaintain
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from shiftthemechanic
+    where mID = #{mid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from shiftthemechanic
+    where mID = #{mid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.cwl.shiftthemechanic" >
+    insert into shiftthemechanic (mID, mName, aID, 
+      aName, aSex, aPhone, 
+      aAddress, aBronDate, isGroupLeader, 
+      loginAccount, weChatAccount, idCard, 
+      residence, depositBank, starLevel, 
+      maintenanceAndRepairWork, brandMaintain
+      )
+    values (#{mid,jdbcType=INTEGER}, #{mname,jdbcType=VARCHAR}, #{aid,jdbcType=VARCHAR}, 
+      #{aname,jdbcType=VARCHAR}, #{asex,jdbcType=VARCHAR}, #{aphone,jdbcType=VARCHAR}, 
+      #{aaddress,jdbcType=VARCHAR}, #{abrondate,jdbcType=DATE}, #{isgroupleader,jdbcType=BIT}, 
+      #{loginaccount,jdbcType=VARCHAR}, #{wechataccount,jdbcType=VARCHAR}, #{idcard,jdbcType=VARCHAR}, 
+      #{residence,jdbcType=VARCHAR}, #{depositbank,jdbcType=VARCHAR}, #{starlevel,jdbcType=INTEGER}, 
+      #{maintenanceandrepairwork,jdbcType=VARCHAR}, #{brandmaintain,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.cwl.shiftthemechanic" >
+    insert into shiftthemechanic
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="mid != null" >
+        mID,
+      </if>
+      <if test="mname != null" >
+        mName,
+      </if>
+      <if test="aid != null" >
+        aID,
+      </if>
+      <if test="aname != null" >
+        aName,
+      </if>
+      <if test="asex != null" >
+        aSex,
+      </if>
+      <if test="aphone != null" >
+        aPhone,
+      </if>
+      <if test="aaddress != null" >
+        aAddress,
+      </if>
+      <if test="abrondate != null" >
+        aBronDate,
+      </if>
+      <if test="isgroupleader != null" >
+        isGroupLeader,
+      </if>
+      <if test="loginaccount != null" >
+        loginAccount,
+      </if>
+      <if test="wechataccount != null" >
+        weChatAccount,
+      </if>
+      <if test="idcard != null" >
+        idCard,
+      </if>
+      <if test="residence != null" >
+        residence,
+      </if>
+      <if test="depositbank != null" >
+        depositBank,
+      </if>
+      <if test="starlevel != null" >
+        starLevel,
+      </if>
+      <if test="maintenanceandrepairwork != null" >
+        maintenanceAndRepairWork,
+      </if>
+      <if test="brandmaintain != null" >
+        brandMaintain,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="mid != null" >
+        #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="mname != null" >
+        #{mname,jdbcType=VARCHAR},
+      </if>
+      <if test="aid != null" >
+        #{aid,jdbcType=VARCHAR},
+      </if>
+      <if test="aname != null" >
+        #{aname,jdbcType=VARCHAR},
+      </if>
+      <if test="asex != null" >
+        #{asex,jdbcType=VARCHAR},
+      </if>
+      <if test="aphone != null" >
+        #{aphone,jdbcType=VARCHAR},
+      </if>
+      <if test="aaddress != null" >
+        #{aaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="abrondate != null" >
+        #{abrondate,jdbcType=DATE},
+      </if>
+      <if test="isgroupleader != null" >
+        #{isgroupleader,jdbcType=BIT},
+      </if>
+      <if test="loginaccount != null" >
+        #{loginaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="wechataccount != null" >
+        #{wechataccount,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="residence != null" >
+        #{residence,jdbcType=VARCHAR},
+      </if>
+      <if test="depositbank != null" >
+        #{depositbank,jdbcType=VARCHAR},
+      </if>
+      <if test="starlevel != null" >
+        #{starlevel,jdbcType=INTEGER},
+      </if>
+      <if test="maintenanceandrepairwork != null" >
+        #{maintenanceandrepairwork,jdbcType=VARCHAR},
+      </if>
+      <if test="brandmaintain != null" >
+        #{brandmaintain,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.cwl.shiftthemechanic" >
+    update shiftthemechanic
+    <set >
+      <if test="mname != null" >
+        mName = #{mname,jdbcType=VARCHAR},
+      </if>
+      <if test="aid != null" >
+        aID = #{aid,jdbcType=VARCHAR},
+      </if>
+      <if test="aname != null" >
+        aName = #{aname,jdbcType=VARCHAR},
+      </if>
+      <if test="asex != null" >
+        aSex = #{asex,jdbcType=VARCHAR},
+      </if>
+      <if test="aphone != null" >
+        aPhone = #{aphone,jdbcType=VARCHAR},
+      </if>
+      <if test="aaddress != null" >
+        aAddress = #{aaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="abrondate != null" >
+        aBronDate = #{abrondate,jdbcType=DATE},
+      </if>
+      <if test="isgroupleader != null" >
+        isGroupLeader = #{isgroupleader,jdbcType=BIT},
+      </if>
+      <if test="loginaccount != null" >
+        loginAccount = #{loginaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="wechataccount != null" >
+        weChatAccount = #{wechataccount,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        idCard = #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="residence != null" >
+        residence = #{residence,jdbcType=VARCHAR},
+      </if>
+      <if test="depositbank != null" >
+        depositBank = #{depositbank,jdbcType=VARCHAR},
+      </if>
+      <if test="starlevel != null" >
+        starLevel = #{starlevel,jdbcType=INTEGER},
+      </if>
+      <if test="maintenanceandrepairwork != null" >
+        maintenanceAndRepairWork = #{maintenanceandrepairwork,jdbcType=VARCHAR},
+      </if>
+      <if test="brandmaintain != null" >
+        brandMaintain = #{brandmaintain,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where mID = #{mid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.cwl.shiftthemechanic" >
+    update shiftthemechanic
+    set mName = #{mname,jdbcType=VARCHAR},
+      aID = #{aid,jdbcType=VARCHAR},
+      aName = #{aname,jdbcType=VARCHAR},
+      aSex = #{asex,jdbcType=VARCHAR},
+      aPhone = #{aphone,jdbcType=VARCHAR},
+      aAddress = #{aaddress,jdbcType=VARCHAR},
+      aBronDate = #{abrondate,jdbcType=DATE},
+      isGroupLeader = #{isgroupleader,jdbcType=BIT},
+      loginAccount = #{loginaccount,jdbcType=VARCHAR},
+      weChatAccount = #{wechataccount,jdbcType=VARCHAR},
+      idCard = #{idcard,jdbcType=VARCHAR},
+      residence = #{residence,jdbcType=VARCHAR},
+      depositBank = #{depositbank,jdbcType=VARCHAR},
+      starLevel = #{starlevel,jdbcType=INTEGER},
+      maintenanceAndRepairWork = #{maintenanceandrepairwork,jdbcType=VARCHAR},
+      brandMaintain = #{brandmaintain,jdbcType=VARCHAR}
+    where mID = #{mid,jdbcType=INTEGER}
+  </update>
+</mapper>

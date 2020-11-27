@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dzw_sys_services" />
+        <module name="dzw_sys_common" />
+        <module name="dzw_sys_web" />
+        <module name="dzw_sys_dao" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dzw_sys" target="1.8" />
+      <module name="dzw_sys_common" target="1.8" />
+      <module name="dzw_sys_dao" target="1.8" />
+      <module name="dzw_sys_services" target="1.8" />
+      <module name="dzw_sys_web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

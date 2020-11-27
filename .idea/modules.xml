@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dzw_sys.iml" filepath="$PROJECT_DIR$/dzw_sys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dzw_sys_common/dzw_sys_common.iml" filepath="$PROJECT_DIR$/dzw_sys_common/dzw_sys_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dzw_sys_dao/dzw_sys_dao.iml" filepath="$PROJECT_DIR$/dzw_sys_dao/dzw_sys_dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dzw_sys_services/dzw_sys_services.iml" filepath="$PROJECT_DIR$/dzw_sys_services/dzw_sys_services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dzw_sys_web/dzw_sys_web.iml" filepath="$PROJECT_DIR$/dzw_sys_web/dzw_sys_web.iml" />
+    </modules>
+  </component>
+</project>

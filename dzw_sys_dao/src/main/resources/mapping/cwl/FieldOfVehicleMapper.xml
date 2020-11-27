@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.cwl.FieldOfVehicleMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.cwl.FieldOfVehicle" >
+    <id column="carNumber" property="carnumber" jdbcType="VARCHAR" />
+    <result column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="carType" property="cartype" jdbcType="VARCHAR" />
+    <result column="timeIntoTheFactory" property="timeintothefactory" jdbcType="REAL" />
+    <result column="ownershipShift" property="ownershipshift" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    carNumber, brand, carType, timeIntoTheFactory, ownershipShift
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from fieldofvehicle
+    where carNumber = #{carnumber,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from fieldofvehicle
+    where carNumber = #{carnumber,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.cwl.FieldOfVehicle" >
+    insert into fieldofvehicle (carNumber, brand, carType, 
+      timeIntoTheFactory, ownershipShift)
+    values (#{carnumber,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, #{cartype,jdbcType=VARCHAR}, 
+      #{timeintothefactory,jdbcType=REAL}, #{ownershipshift,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.cwl.FieldOfVehicle" >
+    insert into fieldofvehicle
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="carnumber != null" >
+        carNumber,
+      </if>
+      <if test="brand != null" >
+        brand,
+      </if>
+      <if test="cartype != null" >
+        carType,
+      </if>
+      <if test="timeintothefactory != null" >
+        timeIntoTheFactory,
+      </if>
+      <if test="ownershipshift != null" >
+        ownershipShift,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="carnumber != null" >
+        #{carnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="cartype != null" >
+        #{cartype,jdbcType=VARCHAR},
+      </if>
+      <if test="timeintothefactory != null" >
+        #{timeintothefactory,jdbcType=REAL},
+      </if>
+      <if test="ownershipshift != null" >
+        #{ownershipshift,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.cwl.FieldOfVehicle" >
+    update fieldofvehicle
+    <set >
+      <if test="brand != null" >
+        brand = #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="cartype != null" >
+        carType = #{cartype,jdbcType=VARCHAR},
+      </if>
+      <if test="timeintothefactory != null" >
+        timeIntoTheFactory = #{timeintothefactory,jdbcType=REAL},
+      </if>
+      <if test="ownershipshift != null" >
+        ownershipShift = #{ownershipshift,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where carNumber = #{carnumber,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.cwl.FieldOfVehicle" >
+    update fieldofvehicle
+    set brand = #{brand,jdbcType=VARCHAR},
+      carType = #{cartype,jdbcType=VARCHAR},
+      timeIntoTheFactory = #{timeintothefactory,jdbcType=REAL},
+      ownershipShift = #{ownershipshift,jdbcType=VARCHAR}
+    where carNumber = #{carnumber,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.cwl.TestOnCompletionMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.cwl.TestOnCompletion" >
+    <id column="repairOrder" property="repairorder" jdbcType="VARCHAR" />
+    <result column="typeOfDocument" property="typeofdocument" jdbcType="VARCHAR" />
+    <result column="businessType" property="businesstype" jdbcType="VARCHAR" />
+    <result column="constructionDivisions" property="constructiondivisions" jdbcType="VARCHAR" />
+    <result column="ownerName" property="ownername" jdbcType="VARCHAR" />
+    <result column="licensePlateNumber" property="licenseplatenumber" jdbcType="VARCHAR" />
+    <result column="carType" property="cartype" jdbcType="VARCHAR" />
+    <result column="VIN" property="vin" jdbcType="VARCHAR" />
+    <result column="pickUpCarTime" property="pickupcartime" jdbcType="DATE" />
+    <result column="expectedCompletion" property="expectedcompletion" jdbcType="DATE" />
+    <result column="timeOfCompletion" property="timeofcompletion" jdbcType="DATE" />
+    <result column="delaysReason" property="delaysreason" jdbcType="VARCHAR" />
+    <result column="numberOfRework" property="numberofrework" jdbcType="INTEGER" />
+    <result column="penaltyAmount" property="penaltyamount" jdbcType="REAL" />
+    <result column="reworkReason" property="reworkreason" jdbcType="VARCHAR" />
+    <result column="principal" property="principal" jdbcType="VARCHAR" />
+    <result column="theDocumentsState" property="thedocumentsstate" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    repairOrder, typeOfDocument, businessType, constructionDivisions, ownerName, licensePlateNumber, 
+    carType, VIN, pickUpCarTime, expectedCompletion, timeOfCompletion, delaysReason, 
+    numberOfRework, penaltyAmount, reworkReason, principal, theDocumentsState
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from testoncompletion
+    where repairOrder = #{repairorder,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from testoncompletion
+    where repairOrder = #{repairorder,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.cwl.TestOnCompletion" >
+    insert into testoncompletion (repairOrder, typeOfDocument, businessType, 
+      constructionDivisions, ownerName, licensePlateNumber, 
+      carType, VIN, pickUpCarTime, 
+      expectedCompletion, timeOfCompletion, delaysReason, 
+      numberOfRework, penaltyAmount, reworkReason, 
+      principal, theDocumentsState)
+    values (#{repairorder,jdbcType=VARCHAR}, #{typeofdocument,jdbcType=VARCHAR}, #{businesstype,jdbcType=VARCHAR}, 
+      #{constructiondivisions,jdbcType=VARCHAR}, #{ownername,jdbcType=VARCHAR}, #{licenseplatenumber,jdbcType=VARCHAR}, 
+      #{cartype,jdbcType=VARCHAR}, #{vin,jdbcType=VARCHAR}, #{pickupcartime,jdbcType=DATE}, 
+      #{expectedcompletion,jdbcType=DATE}, #{timeofcompletion,jdbcType=DATE}, #{delaysreason,jdbcType=VARCHAR}, 
+      #{numberofrework,jdbcType=INTEGER}, #{penaltyamount,jdbcType=REAL}, #{reworkreason,jdbcType=VARCHAR}, 
+      #{principal,jdbcType=VARCHAR}, #{thedocumentsstate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.cwl.TestOnCompletion" >
+    insert into testoncompletion
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="repairorder != null" >
+        repairOrder,
+      </if>
+      <if test="typeofdocument != null" >
+        typeOfDocument,
+      </if>
+      <if test="businesstype != null" >
+        businessType,
+      </if>
+      <if test="constructiondivisions != null" >
+        constructionDivisions,
+      </if>
+      <if test="ownername != null" >
+        ownerName,
+      </if>
+      <if test="licenseplatenumber != null" >
+        licensePlateNumber,
+      </if>
+      <if test="cartype != null" >
+        carType,
+      </if>
+      <if test="vin != null" >
+        VIN,
+      </if>
+      <if test="pickupcartime != null" >
+        pickUpCarTime,
+      </if>
+      <if test="expectedcompletion != null" >
+        expectedCompletion,
+      </if>
+      <if test="timeofcompletion != null" >
+        timeOfCompletion,
+      </if>
+      <if test="delaysreason != null" >
+        delaysReason,
+      </if>
+      <if test="numberofrework != null" >
+        numberOfRework,
+      </if>
+      <if test="penaltyamount != null" >
+        penaltyAmount,
+      </if>
+      <if test="reworkreason != null" >
+        reworkReason,
+      </if>
+      <if test="principal != null" >
+        principal,
+      </if>
+      <if test="thedocumentsstate != null" >
+        theDocumentsState,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="repairorder != null" >
+        #{repairorder,jdbcType=VARCHAR},
+      </if>
+      <if test="typeofdocument != null" >
+        #{typeofdocument,jdbcType=VARCHAR},
+      </if>
+      <if test="businesstype != null" >
+        #{businesstype,jdbcType=VARCHAR},
+      </if>
+      <if test="constructiondivisions != null" >
+        #{constructiondivisions,jdbcType=VARCHAR},
+      </if>
+      <if test="ownername != null" >
+        #{ownername,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseplatenumber != null" >
+        #{licenseplatenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cartype != null" >
+        #{cartype,jdbcType=VARCHAR},
+      </if>
+      <if test="vin != null" >
+        #{vin,jdbcType=VARCHAR},
+      </if>
+      <if test="pickupcartime != null" >
+        #{pickupcartime,jdbcType=DATE},
+      </if>
+      <if test="expectedcompletion != null" >
+        #{expectedcompletion,jdbcType=DATE},
+      </if>
+      <if test="timeofcompletion != null" >
+        #{timeofcompletion,jdbcType=DATE},
+      </if>
+      <if test="delaysreason != null" >
+        #{delaysreason,jdbcType=VARCHAR},
+      </if>
+      <if test="numberofrework != null" >
+        #{numberofrework,jdbcType=INTEGER},
+      </if>
+      <if test="penaltyamount != null" >
+        #{penaltyamount,jdbcType=REAL},
+      </if>
+      <if test="reworkreason != null" >
+        #{reworkreason,jdbcType=VARCHAR},
+      </if>
+      <if test="principal != null" >
+        #{principal,jdbcType=VARCHAR},
+      </if>
+      <if test="thedocumentsstate != null" >
+        #{thedocumentsstate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.cwl.TestOnCompletion" >
+    update testoncompletion
+    <set >
+      <if test="typeofdocument != null" >
+        typeOfDocument = #{typeofdocument,jdbcType=VARCHAR},
+      </if>
+      <if test="businesstype != null" >
+        businessType = #{businesstype,jdbcType=VARCHAR},
+      </if>
+      <if test="constructiondivisions != null" >
+        constructionDivisions = #{constructiondivisions,jdbcType=VARCHAR},
+      </if>
+      <if test="ownername != null" >
+        ownerName = #{ownername,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseplatenumber != null" >
+        licensePlateNumber = #{licenseplatenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cartype != null" >
+        carType = #{cartype,jdbcType=VARCHAR},
+      </if>
+      <if test="vin != null" >
+        VIN = #{vin,jdbcType=VARCHAR},
+      </if>
+      <if test="pickupcartime != null" >
+        pickUpCarTime = #{pickupcartime,jdbcType=DATE},
+      </if>
+      <if test="expectedcompletion != null" >
+        expectedCompletion = #{expectedcompletion,jdbcType=DATE},
+      </if>
+      <if test="timeofcompletion != null" >
+        timeOfCompletion = #{timeofcompletion,jdbcType=DATE},
+      </if>
+      <if test="delaysreason != null" >
+        delaysReason = #{delaysreason,jdbcType=VARCHAR},
+      </if>
+      <if test="numberofrework != null" >
+        numberOfRework = #{numberofrework,jdbcType=INTEGER},
+      </if>
+      <if test="penaltyamount != null" >
+        penaltyAmount = #{penaltyamount,jdbcType=REAL},
+      </if>
+      <if test="reworkreason != null" >
+        reworkReason = #{reworkreason,jdbcType=VARCHAR},
+      </if>
+      <if test="principal != null" >
+        principal = #{principal,jdbcType=VARCHAR},
+      </if>
+      <if test="thedocumentsstate != null" >
+        theDocumentsState = #{thedocumentsstate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where repairOrder = #{repairorder,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.cwl.TestOnCompletion" >
+    update testoncompletion
+    set typeOfDocument = #{typeofdocument,jdbcType=VARCHAR},
+      businessType = #{businesstype,jdbcType=VARCHAR},
+      constructionDivisions = #{constructiondivisions,jdbcType=VARCHAR},
+      ownerName = #{ownername,jdbcType=VARCHAR},
+      licensePlateNumber = #{licenseplatenumber,jdbcType=VARCHAR},
+      carType = #{cartype,jdbcType=VARCHAR},
+      VIN = #{vin,jdbcType=VARCHAR},
+      pickUpCarTime = #{pickupcartime,jdbcType=DATE},
+      expectedCompletion = #{expectedcompletion,jdbcType=DATE},
+      timeOfCompletion = #{timeofcompletion,jdbcType=DATE},
+      delaysReason = #{delaysreason,jdbcType=VARCHAR},
+      numberOfRework = #{numberofrework,jdbcType=INTEGER},
+      penaltyAmount = #{penaltyamount,jdbcType=REAL},
+      reworkReason = #{reworkreason,jdbcType=VARCHAR},
+      principal = #{principal,jdbcType=VARCHAR},
+      theDocumentsState = #{thedocumentsstate,jdbcType=VARCHAR}
+    where repairOrder = #{repairorder,jdbcType=VARCHAR}
+  </update>
+</mapper>

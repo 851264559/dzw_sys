@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.cwl.BillingInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.cwl.BillingInfo" >
+    <result column="bStatic" property="bstatic" jdbcType="VARCHAR" />
+    <result column="bMoney" property="bmoney" jdbcType="REAL" />
+    <result column="materialsExpenses" property="materialsexpenses" jdbcType="REAL" />
+    <result column="costOfLabor" property="costoflabor" jdbcType="REAL" />
+    <result column="bDate" property="bdate" jdbcType="DATE" />
+    <result column="bMan" property="bman" jdbcType="VARCHAR" />
+    <result column="cash" property="cash" jdbcType="REAL" />
+    <result column="bankCard" property="bankcard" jdbcType="VARCHAR" />
+    <result column="bill" property="bill" jdbcType="VARCHAR" />
+    <result column="paymentOfTheAmount" property="paymentoftheamount" jdbcType="REAL" />
+    <result column="atTheCards" property="atthecards" jdbcType="VARCHAR" />
+    <result column="atTheDeposit" property="atthedeposit" jdbcType="REAL" />
+    <result column="collectTaxes" property="collecttaxes" jdbcType="REAL" />
+    <result column="invoiceNumber" property="invoicenumber" jdbcType="VARCHAR" />
+    <result column="internalAccount" property="internalaccount" jdbcType="REAL" />
+    <result column="pointsDeduction" property="pointsdeduction" jdbcType="REAL" />
+    <result column="toAccountProfitAndLoss" property="toaccountprofitandloss" jdbcType="REAL" />
+    <result column="TypeOfInvoice" property="typeofinvoice" jdbcType="VARCHAR" />
+    <result column="invoiceValue" property="invoicevalue" jdbcType="REAL" />
+    <result column="vouchers" property="vouchers" jdbcType="REAL" />
+    <result column="wipeTheMantissa" property="wipethemantissa" jdbcType="REAL" />
+  </resultMap>
+  <insert id="insert" parameterType="com.accp.pojo.cwl.BillingInfo" >
+    insert into billinginfo (bStatic, bMoney, materialsExpenses, 
+      costOfLabor, bDate, bMan, 
+      cash, bankCard, bill, 
+      paymentOfTheAmount, atTheCards, atTheDeposit, 
+      collectTaxes, invoiceNumber, internalAccount, 
+      pointsDeduction, toAccountProfitAndLoss, TypeOfInvoice, 
+      invoiceValue, vouchers, wipeTheMantissa
+      )
+    values (#{bstatic,jdbcType=VARCHAR}, #{bmoney,jdbcType=REAL}, #{materialsexpenses,jdbcType=REAL}, 
+      #{costoflabor,jdbcType=REAL}, #{bdate,jdbcType=DATE}, #{bman,jdbcType=VARCHAR}, 
+      #{cash,jdbcType=REAL}, #{bankcard,jdbcType=VARCHAR}, #{bill,jdbcType=VARCHAR}, 
+      #{paymentoftheamount,jdbcType=REAL}, #{atthecards,jdbcType=VARCHAR}, #{atthedeposit,jdbcType=REAL}, 
+      #{collecttaxes,jdbcType=REAL}, #{invoicenumber,jdbcType=VARCHAR}, #{internalaccount,jdbcType=REAL}, 
+      #{pointsdeduction,jdbcType=REAL}, #{toaccountprofitandloss,jdbcType=REAL}, #{typeofinvoice,jdbcType=VARCHAR}, 
+      #{invoicevalue,jdbcType=REAL}, #{vouchers,jdbcType=REAL}, #{wipethemantissa,jdbcType=REAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.cwl.BillingInfo" >
+    insert into billinginfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="bstatic != null" >
+        bStatic,
+      </if>
+      <if test="bmoney != null" >
+        bMoney,
+      </if>
+      <if test="materialsexpenses != null" >
+        materialsExpenses,
+      </if>
+      <if test="costoflabor != null" >
+        costOfLabor,
+      </if>
+      <if test="bdate != null" >
+        bDate,
+      </if>
+      <if test="bman != null" >
+        bMan,
+      </if>
+      <if test="cash != null" >
+        cash,
+      </if>
+      <if test="bankcard != null" >
+        bankCard,
+      </if>
+      <if test="bill != null" >
+        bill,
+      </if>
+      <if test="paymentoftheamount != null" >
+        paymentOfTheAmount,
+      </if>
+      <if test="atthecards != null" >
+        atTheCards,
+      </if>
+      <if test="atthedeposit != null" >
+        atTheDeposit,
+      </if>
+      <if test="collecttaxes != null" >
+        collectTaxes,
+      </if>
+      <if test="invoicenumber != null" >
+        invoiceNumber,
+      </if>
+      <if test="internalaccount != null" >
+        internalAccount,
+      </if>
+      <if test="pointsdeduction != null" >
+        pointsDeduction,
+      </if>
+      <if test="toaccountprofitandloss != null" >
+        toAccountProfitAndLoss,
+      </if>
+      <if test="typeofinvoice != null" >
+        TypeOfInvoice,
+      </if>
+      <if test="invoicevalue != null" >
+        invoiceValue,
+      </if>
+      <if test="vouchers != null" >
+        vouchers,
+      </if>
+      <if test="wipethemantissa != null" >
+        wipeTheMantissa,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="bstatic != null" >
+        #{bstatic,jdbcType=VARCHAR},
+      </if>
+      <if test="bmoney != null" >
+        #{bmoney,jdbcType=REAL},
+      </if>
+      <if test="materialsexpenses != null" >
+        #{materialsexpenses,jdbcType=REAL},
+      </if>
+      <if test="costoflabor != null" >
+        #{costoflabor,jdbcType=REAL},
+      </if>
+      <if test="bdate != null" >
+        #{bdate,jdbcType=DATE},
+      </if>
+      <if test="bman != null" >
+        #{bman,jdbcType=VARCHAR},
+      </if>
+      <if test="cash != null" >
+        #{cash,jdbcType=REAL},
+      </if>
+      <if test="bankcard != null" >
+        #{bankcard,jdbcType=VARCHAR},
+      </if>
+      <if test="bill != null" >
+        #{bill,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentoftheamount != null" >
+        #{paymentoftheamount,jdbcType=REAL},
+      </if>
+      <if test="atthecards != null" >
+        #{atthecards,jdbcType=VARCHAR},
+      </if>
+      <if test="atthedeposit != null" >
+        #{atthedeposit,jdbcType=REAL},
+      </if>
+      <if test="collecttaxes != null" >
+        #{collecttaxes,jdbcType=REAL},
+      </if>
+      <if test="invoicenumber != null" >
+        #{invoicenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="internalaccount != null" >
+        #{internalaccount,jdbcType=REAL},
+      </if>
+      <if test="pointsdeduction != null" >
+        #{pointsdeduction,jdbcType=REAL},
+      </if>
+      <if test="toaccountprofitandloss != null" >
+        #{toaccountprofitandloss,jdbcType=REAL},
+      </if>
+      <if test="typeofinvoice != null" >
+        #{typeofinvoice,jdbcType=VARCHAR},
+      </if>
+      <if test="invoicevalue != null" >
+        #{invoicevalue,jdbcType=REAL},
+      </if>
+      <if test="vouchers != null" >
+        #{vouchers,jdbcType=REAL},
+      </if>
+      <if test="wipethemantissa != null" >
+        #{wipethemantissa,jdbcType=REAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>

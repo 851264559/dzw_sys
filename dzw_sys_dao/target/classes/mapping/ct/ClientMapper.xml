@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.ct.ClientMapper" >
+  <resultMap id="BaseResultMap" type="client" >
+    <id column="cId" property="cid" jdbcType="VARCHAR" />
+    <result column="cName" property="cname" jdbcType="VARCHAR" />
+    <result column="detailedAddress" property="detailedaddress" jdbcType="VARCHAR" />
+    <result column="linkman" property="linkman" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="userType" property="usertype" jdbcType="INTEGER" />
+    <result column="cardNo" property="cardno" />
+    <result column="admissionDate" property="admissiondate" />
+    <result column="expireDate" property="expiredate"  />
+    <result column="remark" property="remark"  />
+    <result column="nowDate" property="nowdate" />
+    <result column="integral" property="integral"/>
+    <result column="earnest" property="earnest" />
+    <collection column="cId" property="vehicles" select="selectBycId"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cId, cName, detailedAddress, linkman, phone, userType, cardNo, admissionDate, expireDate, 
+    remark, nowDate, integral, earnest
+  </sql>
+<!--    <include refid="Base_Column_List" />-->
+  <!--  List<Client> selectAll();-->
+  <select id="selectAllClient" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select *
+    from client
+  </select>
+
+  <select id="selectBycId" resultType="vehicle">
+    SELECT * FROM `vehicle` WHERE clientId=#{0}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from client
+    where cId = #{cid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.ct.Client" >
+    insert into client (cId, cName, detailedAddress, 
+      linkman, phone, userType, 
+      cardNo, admissionDate, expireDate, 
+      remark, nowDate, integral, 
+      earnest)
+    values (#{cid,jdbcType=VARCHAR}, #{cname,jdbcType=VARCHAR}, #{detailedaddress,jdbcType=VARCHAR}, 
+      #{linkman,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{usertype,jdbcType=INTEGER}, 
+      #{cardno,jdbcType=VARCHAR}, #{admissiondate,jdbcType=DATE}, #{expiredate,jdbcType=DATE}, 
+      #{remark,jdbcType=VARCHAR}, #{nowdate,jdbcType=TIMESTAMP}, #{integral,jdbcType=INTEGER}, 
+      #{earnest,jdbcType=REAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.ct.Client" >
+    insert into client
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        cId,
+      </if>
+      <if test="cname != null" >
+        cName,
+      </if>
+      <if test="detailedaddress != null" >
+        detailedAddress,
+      </if>
+      <if test="linkman != null" >
+        linkman,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="usertype != null" >
+        userType,
+      </if>
+      <if test="cardno != null" >
+        cardNo,
+      </if>
+      <if test="admissiondate != null" >
+        admissionDate,
+      </if>
+      <if test="expiredate != null" >
+        expireDate,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="nowdate != null" >
+        nowDate,
+      </if>
+      <if test="integral != null" >
+        integral,
+      </if>
+      <if test="earnest != null" >
+        earnest,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        #{cid,jdbcType=VARCHAR},
+      </if>
+      <if test="cname != null" >
+        #{cname,jdbcType=VARCHAR},
+      </if>
+      <if test="detailedaddress != null" >
+        #{detailedaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="linkman != null" >
+        #{linkman,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="usertype != null" >
+        #{usertype,jdbcType=INTEGER},
+      </if>
+      <if test="cardno != null" >
+        #{cardno,jdbcType=VARCHAR},
+      </if>
+      <if test="admissiondate != null" >
+        #{admissiondate,jdbcType=DATE},
+      </if>
+      <if test="expiredate != null" >
+        #{expiredate,jdbcType=DATE},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="nowdate != null" >
+        #{nowdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="integral != null" >
+        #{integral,jdbcType=INTEGER},
+      </if>
+      <if test="earnest != null" >
+        #{earnest,jdbcType=REAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.ct.Client" >
+    update client
+    <set >
+      <if test="cname != null" >
+        cName = #{cname,jdbcType=VARCHAR},
+      </if>
+      <if test="detailedaddress != null" >
+        detailedAddress = #{detailedaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="linkman != null" >
+        linkman = #{linkman,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="usertype != null" >
+        userType = #{usertype,jdbcType=INTEGER},
+      </if>
+      <if test="cardno != null" >
+        cardNo = #{cardno,jdbcType=VARCHAR},
+      </if>
+      <if test="admissiondate != null" >
+        admissionDate = #{admissiondate,jdbcType=DATE},
+      </if>
+      <if test="expiredate != null" >
+        expireDate = #{expiredate,jdbcType=DATE},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="nowdate != null" >
+        nowDate = #{nowdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="integral != null" >
+        integral = #{integral,jdbcType=INTEGER},
+      </if>
+      <if test="earnest != null" >
+        earnest = #{earnest,jdbcType=REAL},
+      </if>
+    </set>
+    where cId = #{cid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.ct.Client" >
+    update client
+    set cName = #{cname,jdbcType=VARCHAR},
+      detailedAddress = #{detailedaddress,jdbcType=VARCHAR},
+      linkman = #{linkman,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      userType = #{usertype,jdbcType=INTEGER},
+      cardNo = #{cardno,jdbcType=VARCHAR},
+      admissionDate = #{admissiondate,jdbcType=DATE},
+      expireDate = #{expiredate,jdbcType=DATE},
+      remark = #{remark,jdbcType=VARCHAR},
+      nowDate = #{nowdate,jdbcType=TIMESTAMP},
+      integral = #{integral,jdbcType=INTEGER},
+      earnest = #{earnest,jdbcType=REAL}
+    where cId = #{cid,jdbcType=VARCHAR}
+  </update>
+</mapper>

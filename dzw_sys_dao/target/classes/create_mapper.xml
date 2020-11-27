@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">  
+<generatorConfiguration>  
+    <context id="mySqlTables"  targetRuntime="MyBatis3">  
+        <commentGenerator>  
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>  
+        </commentGenerator>  
+        <!--数据库链接URL，用户名、密码 -->  
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/dzw_database" userId="root" password="123">
+        </jdbcConnection>
+        <javaTypeResolver>  
+            <property name="forceBigDecimals" value="false"/>  
+        </javaTypeResolver>  
+        <!--pojo生成位置-->  
+        <!-- <javaModelGenerator targetPackage="com.accp.pojo" targetProject="src/main/java">  
+            <property name="enableSubPackages" value="true"/>  
+            <property name="trimStrings" value="true"/>  
+        </javaModelGenerator> -->
+        <javaModelGenerator targetPackage="com.accp.pojo.cwl" targetProject="src/main/java">  
+            <property name="enableSubPackages" value="true"/>  
+            <property name="trimStrings" value="true"/>  
+        </javaModelGenerator>  
+        <!--映射文件生成位置-->  
+       <!--  <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources">  
+            <property name="enableSubPackages" value="true"/>  
+        </sqlMapGenerator>  --> 
+        <sqlMapGenerator targetPackage="mapping/cwl" targetProject="src/main/resources">  
+            <property name="enableSubPackages" value="true"/>  
+        </sqlMapGenerator>
+        <!--dao生成位置-->  
+       <!--  <javaClientGenerator type="XMLMAPPER" targetPackage="com.accp.dao" targetProject="src/main/java">  
+            <property name="enableSubPackages" value="true"/>  
+        </javaClientGenerator>  -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.accp.dao.cwl" targetProject="src/main/java">  
+            <property name="enableSubPackages" value="true"/>  
+        </javaClientGenerator> 
+        <!-- 
+		tableName是数据库中的表名或视图名
+		domainObjectName是实体类名
+		-->  
+		<!--表1-->
+        <!-- <table tableName="billinginfo" domainObjectName="BillingInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table> -->
+       <!-- 生成指令：mybatis-generator:generate -->
+       <!-- 员工星级表 -->
+       <table tableName="staremployees" domainObjectName="staremployees" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+      	<!-- 班组技工 -->
+       <table tableName="shiftthemechanic" domainObjectName="shiftthemechanic" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+      <!--  外勤车辆 -->
+       <table tableName="FieldOfVehicle" domainObjectName="FieldOfVehicle" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+       <!-- 维修项目 -->
+       <table tableName="maintenanceitems" domainObjectName="maintenanceitems" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+      <!--  站外救援单 -->
+       <table tableName="OffSiteRescueSheet" domainObjectName="OffSiteRescueSheet" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+      <!--  结算信息 -->
+       <table tableName="BillingInfo" domainObjectName="BillingInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+       <!-- 竣工检验 -->
+       <table tableName="TestOnCompletion" domainObjectName="TestOnCompletion" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+      	<!--  维修单 -->
+       <table tableName="RepairBill" domainObjectName="RepairBill" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+       </context>  
+</generatorConfiguration>  

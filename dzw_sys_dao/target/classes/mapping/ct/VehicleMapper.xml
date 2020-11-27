@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.ct.VehicleMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.ct.Vehicle" >
+    <id column="vId" property="vid" jdbcType="VARCHAR" />
+    <result column="clientId" property="clientid" jdbcType="VARCHAR" />
+    <result column="vehicleBrand" property="vehiclebrand" jdbcType="VARCHAR" />
+    <result column="model" property="model" jdbcType="VARCHAR" />
+    <result column="driver" property="driver" jdbcType="VARCHAR" />
+    <result column="driverPhone" property="driverphone" jdbcType="VARCHAR" />
+    <result column="vehicleOwnership" property="vehicleownership" jdbcType="VARCHAR" />
+    <result column="VIN" property="vin" jdbcType="VARCHAR" />
+    <result column="engine" property="engine" jdbcType="VARCHAR" />
+    <result column="engineBrand" property="enginebrand" jdbcType="VARCHAR" />
+    <result column="vehicleModel" property="vehiclemodel" jdbcType="DATE" />
+    <result column="mileage" property="mileage" jdbcType="VARCHAR" />
+    <result column="load" property="load" jdbcType="INTEGER" />
+    <result column="carSeries" property="carseries" jdbcType="VARCHAR" />
+    <result column="buyDate" property="buydate" jdbcType="DATE" />
+    <result column="registeredDate" property="registereddate" jdbcType="DATE" />
+    <result column="cityDue" property="citydue" jdbcType="DATE" />
+    <result column="fuelType" property="fueltype" jdbcType="VARCHAR" />
+    <result column="member" property="member" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    vId, clientId, vehicleBrand, model, driver, driverPhone, vehicleOwnership, VIN, engine, 
+    engineBrand, vehicleModel, mileage, load, carSeries, buyDate, registeredDate, cityDue, 
+    fuelType, member
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from vehicle
+    where vId = #{vid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from vehicle
+    where vId = #{vid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.ct.Vehicle" >
+    insert into vehicle (vId, clientId, vehicleBrand, 
+      model, driver, driverPhone, 
+      vehicleOwnership, VIN, engine, 
+      engineBrand, vehicleModel, mileage, 
+      load, carSeries, buyDate, 
+      registeredDate, cityDue, fuelType, 
+      member)
+    values (#{vid,jdbcType=VARCHAR}, #{clientid,jdbcType=VARCHAR}, #{vehiclebrand,jdbcType=VARCHAR}, 
+      #{model,jdbcType=VARCHAR}, #{driver,jdbcType=VARCHAR}, #{driverphone,jdbcType=VARCHAR}, 
+      #{vehicleownership,jdbcType=VARCHAR}, #{vin,jdbcType=VARCHAR}, #{engine,jdbcType=VARCHAR}, 
+      #{enginebrand,jdbcType=VARCHAR}, #{vehiclemodel,jdbcType=DATE}, #{mileage,jdbcType=VARCHAR}, 
+      #{load,jdbcType=INTEGER}, #{carseries,jdbcType=VARCHAR}, #{buydate,jdbcType=DATE}, 
+      #{registereddate,jdbcType=DATE}, #{citydue,jdbcType=DATE}, #{fueltype,jdbcType=VARCHAR}, 
+      #{member,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.ct.Vehicle" >
+    insert into vehicle
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="vid != null" >
+        vId,
+      </if>
+      <if test="clientid != null" >
+        clientId,
+      </if>
+      <if test="vehiclebrand != null" >
+        vehicleBrand,
+      </if>
+      <if test="model != null" >
+        model,
+      </if>
+      <if test="driver != null" >
+        driver,
+      </if>
+      <if test="driverphone != null" >
+        driverPhone,
+      </if>
+      <if test="vehicleownership != null" >
+        vehicleOwnership,
+      </if>
+      <if test="vin != null" >
+        VIN,
+      </if>
+      <if test="engine != null" >
+        engine,
+      </if>
+      <if test="enginebrand != null" >
+        engineBrand,
+      </if>
+      <if test="vehiclemodel != null" >
+        vehicleModel,
+      </if>
+      <if test="mileage != null" >
+        mileage,
+      </if>
+      <if test="load != null" >
+        load,
+      </if>
+      <if test="carseries != null" >
+        carSeries,
+      </if>
+      <if test="buydate != null" >
+        buyDate,
+      </if>
+      <if test="registereddate != null" >
+        registeredDate,
+      </if>
+      <if test="citydue != null" >
+        cityDue,
+      </if>
+      <if test="fueltype != null" >
+        fuelType,
+      </if>
+      <if test="member != null" >
+        member,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="vid != null" >
+        #{vid,jdbcType=VARCHAR},
+      </if>
+      <if test="clientid != null" >
+        #{clientid,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclebrand != null" >
+        #{vehiclebrand,jdbcType=VARCHAR},
+      </if>
+      <if test="model != null" >
+        #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="driver != null" >
+        #{driver,jdbcType=VARCHAR},
+      </if>
+      <if test="driverphone != null" >
+        #{driverphone,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicleownership != null" >
+        #{vehicleownership,jdbcType=VARCHAR},
+      </if>
+      <if test="vin != null" >
+        #{vin,jdbcType=VARCHAR},
+      </if>
+      <if test="engine != null" >
+        #{engine,jdbcType=VARCHAR},
+      </if>
+      <if test="enginebrand != null" >
+        #{enginebrand,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclemodel != null" >
+        #{vehiclemodel,jdbcType=DATE},
+      </if>
+      <if test="mileage != null" >
+        #{mileage,jdbcType=VARCHAR},
+      </if>
+      <if test="load != null" >
+        #{load,jdbcType=INTEGER},
+      </if>
+      <if test="carseries != null" >
+        #{carseries,jdbcType=VARCHAR},
+      </if>
+      <if test="buydate != null" >
+        #{buydate,jdbcType=DATE},
+      </if>
+      <if test="registereddate != null" >
+        #{registereddate,jdbcType=DATE},
+      </if>
+      <if test="citydue != null" >
+        #{citydue,jdbcType=DATE},
+      </if>
+      <if test="fueltype != null" >
+        #{fueltype,jdbcType=VARCHAR},
+      </if>
+      <if test="member != null" >
+        #{member,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.ct.Vehicle" >
+    update vehicle
+    <set >
+      <if test="clientid != null" >
+        clientId = #{clientid,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclebrand != null" >
+        vehicleBrand = #{vehiclebrand,jdbcType=VARCHAR},
+      </if>
+      <if test="model != null" >
+        model = #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="driver != null" >
+        driver = #{driver,jdbcType=VARCHAR},
+      </if>
+      <if test="driverphone != null" >
+        driverPhone = #{driverphone,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicleownership != null" >
+        vehicleOwnership = #{vehicleownership,jdbcType=VARCHAR},
+      </if>
+      <if test="vin != null" >
+        VIN = #{vin,jdbcType=VARCHAR},
+      </if>
+      <if test="engine != null" >
+        engine = #{engine,jdbcType=VARCHAR},
+      </if>
+      <if test="enginebrand != null" >
+        engineBrand = #{enginebrand,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclemodel != null" >
+        vehicleModel = #{vehiclemodel,jdbcType=DATE},
+      </if>
+      <if test="mileage != null" >
+        mileage = #{mileage,jdbcType=VARCHAR},
+      </if>
+      <if test="load != null" >
+        load = #{load,jdbcType=INTEGER},
+      </if>
+      <if test="carseries != null" >
+        carSeries = #{carseries,jdbcType=VARCHAR},
+      </if>
+      <if test="buydate != null" >
+        buyDate = #{buydate,jdbcType=DATE},
+      </if>
+      <if test="registereddate != null" >
+        registeredDate = #{registereddate,jdbcType=DATE},
+      </if>
+      <if test="citydue != null" >
+        cityDue = #{citydue,jdbcType=DATE},
+      </if>
+      <if test="fueltype != null" >
+        fuelType = #{fueltype,jdbcType=VARCHAR},
+      </if>
+      <if test="member != null" >
+        member = #{member,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where vId = #{vid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.ct.Vehicle" >
+    update vehicle
+    set clientId = #{clientid,jdbcType=VARCHAR},
+      vehicleBrand = #{vehiclebrand,jdbcType=VARCHAR},
+      model = #{model,jdbcType=VARCHAR},
+      driver = #{driver,jdbcType=VARCHAR},
+      driverPhone = #{driverphone,jdbcType=VARCHAR},
+      vehicleOwnership = #{vehicleownership,jdbcType=VARCHAR},
+      VIN = #{vin,jdbcType=VARCHAR},
+      engine = #{engine,jdbcType=VARCHAR},
+      engineBrand = #{enginebrand,jdbcType=VARCHAR},
+      vehicleModel = #{vehiclemodel,jdbcType=DATE},
+      mileage = #{mileage,jdbcType=VARCHAR},
+      load = #{load,jdbcType=INTEGER},
+      carSeries = #{carseries,jdbcType=VARCHAR},
+      buyDate = #{buydate,jdbcType=DATE},
+      registeredDate = #{registereddate,jdbcType=DATE},
+      cityDue = #{citydue,jdbcType=DATE},
+      fuelType = #{fueltype,jdbcType=VARCHAR},
+      member = #{member,jdbcType=VARCHAR}
+    where vId = #{vid,jdbcType=VARCHAR}
+  </update>
+</mapper>
