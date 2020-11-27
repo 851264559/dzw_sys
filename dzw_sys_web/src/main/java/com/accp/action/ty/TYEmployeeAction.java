@@ -20,10 +20,16 @@ public class TYEmployeeAction {
 	@Autowired
 	private TYEmployeeBiz biz;
 	
-	//查询
+	//通讯名录查询
 	@GetMapping("b/{name}/{p}/{s}")
 	public PageInfo<VO> getVO(@PathVariable String name,@PathVariable Integer p, @PathVariable Integer s) {
 		return biz.queryVO(name, p, s);
+	}
+	
+	//组织机构查询
+	@GetMapping("z/{bid}/{p}/{s}")
+	public PageInfo<VO> getVoAll(@PathVariable Integer bid,@PathVariable Integer p, @PathVariable Integer s) {
+		return biz.queryVoAll(bid, p, s);
 	}
 	
 }

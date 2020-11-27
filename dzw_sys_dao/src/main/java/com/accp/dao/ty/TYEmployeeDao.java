@@ -1,6 +1,8 @@
 package com.accp.dao.ty;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import com.accp.pojo.ty.Postb;
 import com.accp.pojo.ty.VO;
 
 public interface TYEmployeeDao {
@@ -12,6 +14,9 @@ public interface TYEmployeeDao {
 	 */
 	public List<VO> queryAllEmployee(@Param("name")String name);
 	
-	
+	/**
+	 * 组织机构右侧查询
+	 */
+	public List<VO> queryAllVO(@Param("bid")Integer bid);
 	
 }

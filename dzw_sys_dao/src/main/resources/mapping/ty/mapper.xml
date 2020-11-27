@@ -13,4 +13,16 @@
 				</if>
 			</where>
 		</select> 
+		
+		<select id="queryAllVO" resultType="com.accp.pojo.ty.VO">
+			SELECT e.`yname`,e.`ysex`,e.`yphone`,e.`yaddress`,m.`bname`,p.`zname` FROM `employee` e
+			INNER JOIN `ment` m ON m.`bid`=e.`ymentid`
+			INNER JOIN `postb` p ON p.`zid`=e.`ypostid`
+			<where>
+				<if test="bid!=0">
+					m.`bid`=#{bid}
+				</if>
+			</where>
+		</select> 
+		
 </mapper>    

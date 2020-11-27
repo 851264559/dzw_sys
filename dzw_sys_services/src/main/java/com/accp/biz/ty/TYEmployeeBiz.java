@@ -21,4 +21,10 @@ public class TYEmployeeBiz {
 		PageHelper.startPage(pageNum, pageSize);
 		return new PageInfo<VO>(dao.queryAllEmployee(name));
 	}
+	
+	//组织机构查询
+	public PageInfo<VO> queryVoAll(@Param("bid")Integer bid,Integer pageNum, Integer pageSize){
+		PageHelper.startPage(pageNum, pageSize);
+		return new PageInfo<VO>(dao.queryAllVO(bid));
+	}
 }
