@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.accp.dao.ty.TYEmployeeDao">
+		 <select id="queryAllEmployee" resultType="com.accp.pojo.ty.VO" parameterType="String">
+			SELECT m.`bname`,e.`yid`,e.`yname`,e.`yphone`,e.`ytel`,e.`yaddress`,e.`yjphone` FROM `employee` AS e
+			INNER JOIN `ment` AS m ON m.`bid`=e.`ymentid`
+			<where>
+				<if test="name!=null and name!='null'">
+					`yname` = #{name}
+				</if>
+			</where>
+		</select> 
+</mapper>    
