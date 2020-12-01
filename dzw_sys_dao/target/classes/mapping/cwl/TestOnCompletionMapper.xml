@@ -232,4 +232,25 @@
       theDocumentsState = #{thedocumentsstate,jdbcType=VARCHAR}
     where repairOrder = #{repairorder,jdbcType=VARCHAR}
   </update>
+  
+  <select id="queryInfosByCondition" resultMap="BaseResultMap">
+  		SELECT * FROM testoncompletion
+  		<where>
+  				<if test="sTime!='请选择'and eTime!='请选择'">
+  				and pickUpCarTime BETWEEN #{sTime} and #{eTime}
+  				</if>
+  				<if test="rOrder!='请输入'">
+  				and repairOrder = #{rOrder}
+  				</if>
+  				<if test="tDState!='请选择'">
+  				and theDocumentsState = #{tDState}
+  				</if>
+  				<if test="lPNumber!='请输入'">
+  				and licensePlateNumber = #{lPNumber}
+  				</if>
+  				<if test="vin!='请输入'">
+  				and VIN = #{vin}
+  				</if>
+  		</where>
+  </select>
 </mapper>
