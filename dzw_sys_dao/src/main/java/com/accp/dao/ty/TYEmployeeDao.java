@@ -64,12 +64,10 @@ public interface TYEmployeeDao {
 	@Delete("DELETE FROM `employee` WHERE `yid`=#{yid}")
 	public int deleteyid(@Param("yid") Integer yid);
 	
-	 /**
-	  * 登录
-	  * @param yaccount
-	  * @param ypwd
-	  * @return
-	  */
+
+	/**
+	 *  登录
+	 */
 	public Employee login(@Param("yaccount")String yaccount,@Param("ypwd")String ypwd);
 	
 }
