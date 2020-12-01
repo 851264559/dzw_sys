@@ -41,6 +41,30 @@ public class TYEmployeeBiz {
 		return new PageInfo<VO>(dao.queryAllVO(bid));
 	}
 	
+	//部门下拉框绑定
+	public List<Ment> queryMent(){
+		return dao.queryAllMent();
+	}
+	
+	//职位部门下拉框绑定
+	public List<Postb> queryPostb(){
+		return dao.queryAllPostb();
+	}
+	
+	//新增员工
+	public void addEmployee(Employee employee) {
+		dao.saveEdocentry(employee);
+	}
+	
+	//修改页面查询
+	public Employee getEmployee(Integer yid) {
+		return dao.loadEmployee(yid);
+	}
+	
+	//员工删除
+	public void removeyid(Integer yid) {
+		dao.deleteyid(yid);
+	}
 	/**
 	 * 登录
 	 * @param yaccount
