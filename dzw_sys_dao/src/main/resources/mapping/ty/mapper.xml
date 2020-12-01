@@ -4,25 +4,61 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.accp.dao.ty.TYEmployeeDao">
-		 <select id="queryAllEmployee" resultType="com.accp.pojo.ty.VO" parameterType="String">
-			SELECT m.`bname`,e.`yid`,e.`yname`,e.`yphone`,e.`ytel`,e.`yaddress`,e.`yjphone` FROM `employee` AS e
-			INNER JOIN `ment` AS m ON m.`bid`=e.`ymentid`
-			<where>
-				<if test="name!=null and name!='null'">
-					`yname` = #{name}
-				</if>
-			</where>
-		</select> 
-		
-		<select id="queryAllVO" resultType="com.accp.pojo.ty.VO">
-			SELECT e.`yname`,e.`ysex`,e.`yphone`,e.`yaddress`,m.`bname`,p.`zname` FROM `employee` e
-			INNER JOIN `ment` m ON m.`bid`=e.`ymentid`
-			INNER JOIN `postb` p ON p.`zid`=e.`ypostid`
-			<where>
-				<if test="bid!=0">
-					m.`bid`=#{bid}
-				</if>
-			</where>
-		</select> 
-		
+	<select id="queryAllEmployee" resultType="com.accp.pojo.ty.VO"
+		parameterType="String">
+		SELECT
+		m.`bname`,e.`yid`,e.`yname`,e.`yphone`,e.`ytel`,e.`yaddress`,e.`yjphone`
+		FROM `employee` AS e
+		INNER JOIN `ment` AS m ON m.`bid`=e.`ymentid`
+		<where>
+			<if test="name!=null and name!='null'">
+				`yname` = #{name}
+			</if>
+		</where>
+	</select>
+
+	<select id="queryAllVO" resultType="com.accp.pojo.ty.VO">
+		SELECT e.`yname`,e.`ysex`,e.`yphone`,e.`yaddress`,m.`bname`,p.`zname`
+		FROM `employee` e
+		INNER JOIN `ment` m ON m.`bid`=e.`ymentid`
+		INNER JOIN `postb` p ON p.`zid`=e.`ypostid`
+		<where>
+			<if test="bid!=0">
+				m.`bid`=#{bid}
+			</if>
+		</where>
+	</select>
+
+
+	<!--Employee login(@Param("yaccount")String yaccount,@Param("ypwd")String 
+		ypwd); -->
+	<select id="login" resultMap="empMap">
+		SELECT * FROM `employee` e
+		INNER JOIN `postb` p ON p.`zid`=e.`ypostid`
+		INNER JOIN `tbl_perm` tp ON tp.`rid` = p.`zid`
+		INNER JOIN `tbl_function` f ON f.`fid`=tp.`fid`
+		WHERE yaccount=#{yaccount} AND ypwd=#{ypwd}
+	</select>
+	
+	<resultMap type="Employee" id="empMap" autoMapping="true">
+		<id column="yid" property="yid"/>
+		<association property="postb" resultMap="postbMap"></association>
+	</resultMap>
+
+	<resultMap type="Postb" id="postbMap" autoMapping="true">
+		<id column="zid" property="zid" />
+		<collection property="functions" ofType="function">
+			<id column="fid" property="fid" />
+			<result column="fcode" property="fcode" />
+			<result column="fname" property="fname" />
+			<result column="createdate" property="createdate" />
+			<result column="fpid" property="fpid" />
+			<association property="parentFun" column="fpid"
+				select="selectParentFun"></association>
+		</collection>
+	</resultMap>
+
+	<select id="selectParentFun" resultType="function">
+		select * from tbl_function where fid=#{0}
+	</select>
 </mapper>    
