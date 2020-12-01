@@ -41,7 +41,6 @@ public class TYEmployeeBiz {
 		return new PageInfo<VO>(dao.queryAllVO(bid));
 	}
 	
-<<<<<<< HEAD
 	//部门下拉框绑定
 	public List<Ment> queryMent(){
 		return dao.queryAllMent();
@@ -65,7 +64,7 @@ public class TYEmployeeBiz {
 	//员工删除
 	public void removeyid(Integer yid) {
 		dao.deleteyid(yid);
-=======
+	}
 	/**
 	 * 登录
 	 * @param yaccount
@@ -74,6 +73,5 @@ public class TYEmployeeBiz {
 	 */
 	public Employee login(String yaccount,String ypwd) {
 		return dao.login(yaccount, ypwd);
->>>>>>> 7d3bfb1e933ea2aef76f9783a1a2848c8df12726
 	}
 }

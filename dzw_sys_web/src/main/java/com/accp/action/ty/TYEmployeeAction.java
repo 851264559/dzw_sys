@@ -1,9 +1,7 @@
 package com.accp.action.ty;
-<<<<<<< HEAD
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-=======
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +10,6 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import javax.servlet.http.HttpSession;
->>>>>>> 7d3bfb1e933ea2aef76f9783a1a2848c8df12726
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,10 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.accp.biz.ty.TYEmployeeBiz;
 import com.accp.biz.ty.TYMentBiz;
-<<<<<<< HEAD
-=======
 import com.accp.pojo.cyj.Function;
->>>>>>> 7d3bfb1e933ea2aef76f9783a1a2848c8df12726
 import com.accp.pojo.ty.Employee;
 import com.accp.pojo.ty.Ment;
 import com.accp.pojo.ty.Postb;
@@ -60,7 +54,6 @@ public class TYEmployeeAction {
 		return biz.queryVoAll(bid, p, s);
 	}
 	
-<<<<<<< HEAD
 	//部门下拉框绑定
 	@GetMapping("ww")
 	public List<Ment> getEdoVoInfo() {
@@ -98,7 +91,6 @@ public class TYEmployeeAction {
 		return message;
 	}
 	
-=======
 	/**
 	 * 登录
 	 */
@@ -147,5 +139,4 @@ public class TYEmployeeAction {
 		}
 		return tree;
 	}
->>>>>>> 7d3bfb1e933ea2aef76f9783a1a2848c8df12726
 }
