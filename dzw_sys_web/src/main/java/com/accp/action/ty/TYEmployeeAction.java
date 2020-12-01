@@ -8,14 +8,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -79,9 +78,21 @@ public class TYEmployeeAction {
 	//修改页面详情
 	@GetMapping("cc/{yid}")
 	public Employee getEdocentry(@PathVariable Integer yid) {
+		System.out.println("hhhhhhhhhh"+yid);
 		return biz.getEmployee(yid);
 	}
 	
+	//修改
+	@PutMapping("xx/Employee")
+	public Map<String, String> updateEmployeeInfo(@RequestBody Employee employee) {
+		Map<String, String> message = new HashMap<String, String>();
+		biz.modifyEmployee(employee);
+		message.put("code", "200");
+		message.put("msg", "ok");
+		return message;
+	}
+	
+	//员工删除
 	@DeleteMapping("hhh/{yid}")
 	public Map<String, String> delyidInfo(@PathVariable Integer yid) {
 		Map<String, String> message = new HashMap<String, String>();
