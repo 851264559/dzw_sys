@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.cyj.FunctionMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.cyj.Function" >
+    <id column="fid" property="fid" jdbcType="INTEGER" />
+    <result column="fcode" property="fcode" jdbcType="VARCHAR" />
+    <result column="fname" property="fname" jdbcType="VARCHAR" />
+    <result column="fpid" property="fpid" jdbcType="INTEGER" />
+    <result column="createdate" property="createdate" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fid, fcode, fname, fpid, createdate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_function
+    where fid = #{fid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbl_function
+    where fid = #{fid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.cyj.Function" >
+    insert into tbl_function (fid, fcode, fname, 
+      fpid, createdate)
+    values (#{fid,jdbcType=INTEGER}, #{fcode,jdbcType=VARCHAR}, #{fname,jdbcType=VARCHAR}, 
+      #{fpid,jdbcType=INTEGER}, #{createdate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.cyj.Function" >
+    insert into tbl_function
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="fcode != null" >
+        fcode,
+      </if>
+      <if test="fname != null" >
+        fname,
+      </if>
+      <if test="fpid != null" >
+        fpid,
+      </if>
+      <if test="createdate != null" >
+        createdate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fid != null" >
+        #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="fcode != null" >
+        #{fcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null" >
+        #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="fpid != null" >
+        #{fpid,jdbcType=INTEGER},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.cyj.Function" >
+    update tbl_function
+    <set >
+      <if test="fcode != null" >
+        fcode = #{fcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fname != null" >
+        fname = #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="fpid != null" >
+        fpid = #{fpid,jdbcType=INTEGER},
+      </if>
+      <if test="createdate != null" >
+        createdate = #{createdate,jdbcType=DATE},
+      </if>
+    </set>
+    where fid = #{fid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.cyj.Function" >
+    update tbl_function
+    set fcode = #{fcode,jdbcType=VARCHAR},
+      fname = #{fname,jdbcType=VARCHAR},
+      fpid = #{fpid,jdbcType=INTEGER},
+      createdate = #{createdate,jdbcType=DATE}
+    where fid = #{fid,jdbcType=INTEGER}
+  </update>
+</mapper>
