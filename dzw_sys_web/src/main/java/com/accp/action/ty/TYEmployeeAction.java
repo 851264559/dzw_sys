@@ -111,6 +111,7 @@ public class TYEmployeeAction {
 		Map<String, Object> message = new HashMap<String, Object>();
 		if (emp != null) {
 			session.setAttribute("EMPLOYEE", emp);// 服务器保存
+			System.out.println(session.getAttribute("EMPLOYEE"));
 			message.put("code", "200");
 			message.put("msg", "ok");
 			message.put("employee", emp);// 客户端保存
@@ -121,6 +122,11 @@ public class TYEmployeeAction {
 		return message;
 	}
 	
+	/**
+	 * 获得功能树
+	 * @param session
+	 * @return
+	 */
 	@GetMapping("getFunTree")
 	public List getEmpFunTree(HttpSession session){
 		Employee emp = (Employee) session.getAttribute("EMPLOYEE");

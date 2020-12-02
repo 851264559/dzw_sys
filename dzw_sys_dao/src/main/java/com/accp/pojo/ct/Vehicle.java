@@ -1,15 +1,27 @@
 package com.accp.pojo.ct;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * 车资料
  */
 public class Vehicle {
     //车编号
-    private String vid;
+    private Integer vid;
     //客户编号
     private String clientid;
+
+    public String getLicense() {
+        return license;
+    }
+
+    public void setLicense(String license) {
+        this.license = license;
+    }
+
+    //车牌号
+    private String license;
     //车辆品牌
     private String vehiclebrand;
     //车辆型号
@@ -45,13 +57,15 @@ public class Vehicle {
     //会员码
     private String member;
 
-    private Client client;
+    //一个用户对应车（一对多）
+    private List<Client> client;
 
     @Override
     public String toString() {
         return "Vehicle{" +
                 "vid='" + vid + '\'' +
                 ", clientid='" + clientid + '\'' +
+                ", license='" + license + '\'' +
                 ", vehiclebrand='" + vehiclebrand + '\'' +
                 ", model='" + model + '\'' +
                 ", driver='" + driver + '\'' +
@@ -73,19 +87,20 @@ public class Vehicle {
                 '}';
     }
 
-    public Client getClient() {
+    public List<Client> getClient() {
         return client;
     }
 
-    public void setClient(Client client) {
+    public void setClient(List<Client> client) {
         this.client = client;
     }
 
     public Vehicle() {}
 
-    public Vehicle(String vid, String clientid, String vehiclebrand, String model, String driver, String driverphone, String vehicleownership, String vin, String engine, String enginebrand, Date vehiclemodel, String mileage, Integer load, String carseries, Date buydate, Date registereddate, Date citydue, String fueltype, String member) {
+    public Vehicle(Integer vid, String clientid, String license, String vehiclebrand, String model, String driver, String driverphone, String vehicleownership, String vin, String engine, String enginebrand, Date vehiclemodel, String mileage, Integer load, String carseries, Date buydate, Date registereddate, Date citydue, String fueltype, String member, List<Client> client) {
         this.vid = vid;
         this.clientid = clientid;
+        this.license = license;
         this.vehiclebrand = vehiclebrand;
         this.model = model;
         this.driver = driver;
@@ -103,14 +118,15 @@ public class Vehicle {
         this.citydue = citydue;
         this.fueltype = fueltype;
         this.member = member;
+        this.client = client;
     }
 
-    public String getVid() {
+    public Integer getVid() {
         return vid;
     }
 
-    public void setVid(String vid) {
-        this.vid = vid == null ? null : vid.trim();
+    public void setVid(Integer vid) {
+        this.vid = vid;
     }
 
     public String getClientid() {

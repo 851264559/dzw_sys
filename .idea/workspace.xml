@@ -2,23 +2,139 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="dzw_sys_web:war" />
+      <artifact name="dzw_sys" />
     </artifacts-to-build>
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f31be9c-553b-4a4f-b2cf-3404a5b7ecda" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dzw_sys_dao/src/main/java/com/accp/vo/ct/ClientVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dzw_sys_web/src/main/java/com/accp/action/ct/ClientAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/dzw_sys_dao.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/dzw_sys_dao.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/src/main/java/com/accp/dao/ct/ClientMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/src/main/java/com/accp/dao/ct/ClientMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/src/main/java/com/accp/pojo/ct/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/src/main/java/com/accp/pojo/ct/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/src/main/java/com/accp/pojo/ct/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/src/main/java/com/accp/pojo/ct/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/src/main/resources/mapping/ct/ClientMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/src/main/resources/mapping/ct/ClientMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/create_mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/create_mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dzw_sys_services/src/main/java/com/accp/biz/ct/aaa.java" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/src/main/java/com/accp/biz/ct/ClientServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dzw_sys_services/src/main/resources/spring-ctx.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/src/main/resources/spring-ctx.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Tomcat_8_5_24.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/dzw_sys_web_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/dzw_sys_web_war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_0_9_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_0_9_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_4_1_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_4_1_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_5_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_5_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jsp_api_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jsp_api_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_38.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_38.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_6_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_6_12.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_6_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_6_12.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_14_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_14_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_14_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_14_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_14_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_14_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_14_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_14_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_14_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_14_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_14_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_14_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_3_14_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_3_14_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_14_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_14_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_14_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_14_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_14_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_14_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_14_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_14_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_common/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_common/target/classes/META-INF/maven/com.accp/dzw_sys_common/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_common/target/classes/META-INF/maven/com.accp/dzw_sys_common/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/META-INF/maven/com.accp/dzw_sys_dao/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/META-INF/maven/com.accp/dzw_sys_dao/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/ct/ClientMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/ct/ClientMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/ct/VehicleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/ct/VehicleMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/BillingInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/BillingInfoMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/FieldOfVehicleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/FieldOfVehicleMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/OffSiteRescueSheetMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/OffSiteRescueSheetMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/RepairBillMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/RepairBillMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/TestOnCompletionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/TestOnCompletionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/maintenanceitemsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/maintenanceitemsMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/shiftthemechanicMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/shiftthemechanicMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/staremployeesMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cwl/staremployeesMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cyj/FunctionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cyj/FunctionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cyj/PermMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/cyj/PermMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/ty/TYEmployeeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/ty/TYEmployeeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/ty/TYMentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/ty/TYMentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/ty/TYPostbDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/ty/TYPostbDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/wzy/IEngineTypeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/dao/wzy/IEngineTypeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ct/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ct/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ct/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ct/Vehicle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/BillingInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/BillingInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/FieldOfVehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/FieldOfVehicle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/OffSiteRescueSheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/OffSiteRescueSheet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/RepairBill.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/RepairBill.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/TestOnCompletion.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/TestOnCompletion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/maintenanceitems.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/maintenanceitems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/shiftthemechanic.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/shiftthemechanic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/staremployees.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cwl/staremployees.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cyj/Function.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cyj/Function.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cyj/Perm.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/cyj/Perm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ty/Dimissiontext.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ty/Dimissiontext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ty/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ty/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ty/Ment.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ty/Ment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ty/Postb.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ty/Postb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ty/Quit.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ty/Quit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ty/VO.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/ty/VO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/wzy/EngineType.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/pojo/wzy/EngineType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/vo/ct/ClientVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_dao/target/classes/com/accp/vo/ct/ClientVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/dzw_sys_services.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/dzw_sys_services.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/META-INF/maven/com.accp/dzw_sys_services/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/META-INF/maven/com.accp/dzw_sys_services/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/ct/ClientServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/ct/ClientServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/fieldOfVehicleBiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/fieldOfVehicleBiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/maintenanceItemsBiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/maintenanceItemsBiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/offSiteRescueSheetBiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/offSiteRescueSheetBiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/repairBillBiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/repairBillBiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/starEmployeesBiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/starEmployeesBiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/testBiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/testBiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/testOnCompletionBiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/cwl/testOnCompletionBiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/ty/TYEmployeeBiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/ty/TYEmployeeBiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/ty/TYMentBiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/ty/TYMentBiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/ty/TYPostbBiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/ty/TYPostbBiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/wzy/EngineTypeBiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/target/classes/com/accp/biz/wzy/EngineTypeBiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_services/target/test-classes/com/accp/test/cwl/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_services/target/test-classes/com/accp/test/cwl/test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dzw_sys_web/dzw_sys_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/dzw_sys_web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/ct/ClientAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/ct/ClientAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/cwl/StarEmployeesAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/cwl/StarEmployeesAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/cwl/fieldOfVehicleAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/cwl/fieldOfVehicleAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/cwl/maintenanceItemsAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/cwl/maintenanceItemsAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/cwl/offSiteRescueSheetAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/cwl/offSiteRescueSheetAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/cwl/repairBillAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/cwl/repairBillAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/cwl/testOnCompletionAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/cwl/testOnCompletionAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/ty/TYEmployeeAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/ty/TYEmployeeAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/ty/TYMentAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/ty/TYMentAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/ty/TYPostbAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/ty/TYPostbAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/wzy/EngineTypeAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/classes/com/accp/action/wzy/EngineTypeAction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/dzw_sys.war" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/dzw_sys.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/dzw_sys/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/dzw_sys/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/dzw_sys/WEB-INF/lib/dzw_sys_dao-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/dzw_sys/WEB-INF/lib/dzw_sys_dao-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dzw_sys_web/target/dzw_sys/WEB-INF/lib/dzw_sys_services-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dzw_sys_web/target/dzw_sys/WEB-INF/lib/dzw_sys_services-0.0.1-SNAPSHOT.jar" afterDir="false" />
     </list>
@@ -66,13 +182,47 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Angular Template" />
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 8.5.24" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.24" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="C:\Program Files\Java\jdk1.8.0_152\jre" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/dzw_sys/" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dzw_sys_web/src/main/java/com/accp/action/ct" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\111\dzw_sys\dzw_sys_web\src\main\java\com\accp\action\ct" />
+      <recent name="D:\github\111\dzw_sys\dzw_sys_services\src\main\java\com\accp\biz\ct" />
+      <recent name="D:\github\111\dzw_sys\dzw_sys_dao\src\main\resources\mapping\ct" />
+      <recent name="D:\github\111\dzw_sys\dzw_sys_dao\src\main\java\com\accp\pojo\ct" />
+      <recent name="D:\github\111\dzw_sys\dzw_sys_dao\src\main\java\com\accp\dao\ct" />
+    </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.241">
     <configuration name="qqqq" type="MavenRunConfiguration" factoryName="Maven">
@@ -103,16 +253,17 @@
     </configuration>
     <configuration name="Tomcat 8.5.241" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.241" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8 (2)" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/dzw/" />
+>>>>>>> 47bd8b32208c43f790a112da7ade40f34dd5957d
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="dzw_sys_web:war">
+        <artifact name="dzw_sys_web_war">
           <settings>
-            <option name="CONTEXT_PATH" value="/dzw" />
+            <option name="CONTEXT_PATH" value="/dzw_sys_web_war" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_dzw_sys" />
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_8_5_24_dzw_sys_3" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -120,7 +271,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="36050" />
+        <option name="DEBUG_PORT" value="1236" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -170,14 +321,73 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="dzw_sys_web:war" />
+          <artifact name="dzw_sys_web_war" />
         </option>
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Maven.qqqq" />
-      <item itemvalue="Tomcat Server.Tomcat 8.5.241" />
-    </list>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.24" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_dzw_sys" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="1236" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -190,6 +400,13 @@
       <option name="presentableId" value="Default" />
       <updated>1606350921603</updated>
       <workItem from="1606350935921" duration="10487000" />
+<<<<<<< HEAD
+      <workItem from="1606814760919" duration="1753000" />
+      <workItem from="1606817373563" duration="565000" />
+=======
+      <workItem from="1606814156660" duration="1247000" />
+      <workItem from="1606831114432" duration="2323000" />
+>>>>>>> 47bd8b32208c43f790a112da7ade40f34dd5957d
     </task>
     <task id="LOCAL-00001" summary="创建了biz">
       <created>1606351995604</created>
@@ -214,6 +431,18 @@
   <component name="UpdateCopyrightCheckinHandler">
     <option name="UPDATE_COPYRIGHT" value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
@@ -233,78 +462,182 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="651" y="274" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1606351657880" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606354665367">
-      <screen x="0" y="0" width="1536" height="824" />
+<<<<<<< HEAD
+    <state x="121" y="0" key="#Project_Structure" timestamp="1606817773203">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="121" y="0" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1606817773203" />
+    <state x="436" y="0" width="681" height="864" key="#Tomcat_8.5.241" timestamp="1606814815285">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="436" y="0" width="681" height="864" key="#Tomcat_8.5.241/0.0.1536.864@0.0.1536.864" timestamp="1606814815285" />
+    <state x="540" y="299" key="#Tomcat_Server" timestamp="1606814939668">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="540" y="299" key="#Tomcat_Server/0.0.1536.864@0.0.1536.864" timestamp="1606814939668" />
+    <state x="199" y="21" width="1097" height="790" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606817776085">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1606354665367" />
+    <state x="199" y="21" width="1097" height="790" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1606817776085" />
+=======
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606814351027">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1606814351027" />
+>>>>>>> 47bd8b32208c43f790a112da7ade40f34dd5957d
     <state x="517" y="113" key="#com.intellij.ide.util.MemberChooser" timestamp="1606355481846">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="517" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1606355481846" />
-    <state x="490" y="50" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1606351084534">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="490" y="0" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1606817179750">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="490" y="50" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1536.824@0.0.1536.824" timestamp="1606351084534" />
+    <state x="490" y="0" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1536.864@0.0.1536.864" timestamp="1606817179750" />
     <state x="367" y="0" key="CommitChangelistDialog2" timestamp="1606354785939">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="367" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1606354785939" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606351805881">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="549" y="175" key="FileChooserDialogImpl" timestamp="1606817604450">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606351805881" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1606364170846">
-      <screen x="0" y="0" width="1536" height="824" />
+<<<<<<< HEAD
+    <state x="549" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1606817604450" />
+    <state width="1479" height="182" key="GridCell.Tab.0.bottom" timestamp="1606817938437">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606364170846" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1606364170846">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1479" height="182" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606817938437" />
+    <state width="1479" height="182" key="GridCell.Tab.0.center" timestamp="1606817938437">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606364170846" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1606364170846">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1479" height="182" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606817938437" />
+    <state width="1479" height="182" key="GridCell.Tab.0.left" timestamp="1606817938437">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606364170846" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1606364170846">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1479" height="182" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606817938437" />
+    <state width="1479" height="182" key="GridCell.Tab.0.right" timestamp="1606817938437">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606364170846" />
-    <state width="1219" height="215" key="GridCell.Tab.1.bottom" timestamp="1606364170839">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1479" height="182" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606817938437" />
+    <state width="1479" height="182" key="GridCell.Tab.1.bottom" timestamp="1606817938437">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1219" height="215" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606364170839" />
-    <state width="1219" height="215" key="GridCell.Tab.1.center" timestamp="1606364170839">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1479" height="182" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606817938437" />
+    <state width="1479" height="182" key="GridCell.Tab.1.center" timestamp="1606817938437">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1219" height="215" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1606364170839" />
-    <state width="1219" height="215" key="GridCell.Tab.1.left" timestamp="1606364170839">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1479" height="182" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1606817938437" />
+    <state width="1479" height="182" key="GridCell.Tab.1.left" timestamp="1606817938437">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1219" height="215" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1606364170839" />
-    <state width="1219" height="215" key="GridCell.Tab.1.right" timestamp="1606364170839">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1479" height="182" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1606817938437" />
+    <state width="1479" height="182" key="GridCell.Tab.1.right" timestamp="1606817938437">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1219" height="215" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606364170839" />
-    <state width="1219" height="215" key="GridCell.Tab.2.bottom" timestamp="1606364170839">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1479" height="182" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1606817938437" />
+    <state width="1479" height="182" key="GridCell.Tab.2.bottom" timestamp="1606817938437">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1219" height="215" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606364170839" />
-    <state width="1219" height="215" key="GridCell.Tab.2.center" timestamp="1606364170839">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1479" height="182" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606817938437" />
+    <state width="1479" height="182" key="GridCell.Tab.2.center" timestamp="1606817938437">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1219" height="215" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1606364170839" />
-    <state width="1219" height="215" key="GridCell.Tab.2.left" timestamp="1606364170839">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1479" height="182" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1606817938437" />
+    <state width="1479" height="182" key="GridCell.Tab.2.left" timestamp="1606817938437">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1219" height="215" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1606364170839" />
-    <state width="1219" height="215" key="GridCell.Tab.2.right" timestamp="1606364170839">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1479" height="182" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1606817938437" />
+    <state width="1479" height="182" key="GridCell.Tab.2.right" timestamp="1606817938437">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1219" height="215" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1606364170839" />
-    <state x="270" y="0" key="SettingsEditor" timestamp="1606355853428">
+    <state width="1479" height="182" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1606817938437" />
+    <state width="1479" height="393" key="GridCell.Tab.3.bottom" timestamp="1606817365097">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1479" height="393" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606817365097" />
+    <state width="1479" height="393" key="GridCell.Tab.3.center" timestamp="1606817365097">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1479" height="393" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1606817365097" />
+    <state width="1479" height="393" key="GridCell.Tab.3.left" timestamp="1606817365097">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1479" height="393" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1606817365097" />
+    <state width="1479" height="393" key="GridCell.Tab.3.right" timestamp="1606817365097">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1479" height="393" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1606817365097" />
+    <state x="270" y="0" key="SettingsEditor" timestamp="1606814876853">
+      <screen x="0" y="0" width="1536" height="864" />
+=======
+    <state width="1268" height="277" key="GridCell.Tab.0.bottom" timestamp="1606833684808">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1268" height="277" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606833684808" />
+    <state width="1268" height="277" key="GridCell.Tab.0.center" timestamp="1606833684808">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606833684808" />
+    <state width="1268" height="277" key="GridCell.Tab.0.left" timestamp="1606833684808">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606833684808" />
+    <state width="1268" height="277" key="GridCell.Tab.0.right" timestamp="1606833684808">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606833684808" />
+    <state width="1268" height="277" key="GridCell.Tab.1.bottom" timestamp="1606833684695">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606833684695" />
+    <state width="1268" height="277" key="GridCell.Tab.1.center" timestamp="1606833684694">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1606833684694" />
+    <state width="1268" height="277" key="GridCell.Tab.1.left" timestamp="1606833684694">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1606833684694" />
+    <state width="1268" height="277" key="GridCell.Tab.1.right" timestamp="1606833684694">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606833684694" />
+    <state width="1268" height="277" key="GridCell.Tab.2.bottom" timestamp="1606833684695">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606833684695" />
+    <state width="1268" height="277" key="GridCell.Tab.2.center" timestamp="1606833684695">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1606833684695" />
+    <state width="1268" height="277" key="GridCell.Tab.2.left" timestamp="1606833684695">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1606833684695" />
+    <state width="1268" height="277" key="GridCell.Tab.2.right" timestamp="1606833684695">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1606833684695" />
+    <state x="270" y="0" key="SettingsEditor" timestamp="1606355853428">
+      <screen x="0" y="0" width="1536" height="824" />
+>>>>>>> 47bd8b32208c43f790a112da7ade40f34dd5957d
+    </state>
     <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606355853428" />
+    <state x="270" y="0" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1606814876853" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606354729029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
