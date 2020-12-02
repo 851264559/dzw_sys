@@ -185,6 +185,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -207,6 +208,52 @@
   <component name="RunManager">
     <configuration name="Tomcat 8.5.24" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.24" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="C:\Program Files\Java\jdk1.8.0_152\jre" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/dzw_sys/" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dzw_sys_web/src/main/java/com/accp/action/ct" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\111\dzw_sys\dzw_sys_web\src\main\java\com\accp\action\ct" />
+      <recent name="D:\github\111\dzw_sys\dzw_sys_services\src\main\java\com\accp\biz\ct" />
+      <recent name="D:\github\111\dzw_sys\dzw_sys_dao\src\main\resources\mapping\ct" />
+      <recent name="D:\github\111\dzw_sys\dzw_sys_dao\src\main\java\com\accp\pojo\ct" />
+      <recent name="D:\github\111\dzw_sys\dzw_sys_dao\src\main\java\com\accp\dao\ct" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.241">
+    <configuration name="qqqq" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+                <option value="-e" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/dzw_sys_dao" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat 8.5.241" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.241" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8 (2)" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/dzw/" />
+>>>>>>> 47bd8b32208c43f790a112da7ade40f34dd5957d
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="dzw_sys_web_war">
@@ -353,8 +400,13 @@
       <option name="presentableId" value="Default" />
       <updated>1606350921603</updated>
       <workItem from="1606350935921" duration="10487000" />
+<<<<<<< HEAD
       <workItem from="1606814760919" duration="1753000" />
       <workItem from="1606817373563" duration="565000" />
+=======
+      <workItem from="1606814156660" duration="1247000" />
+      <workItem from="1606831114432" duration="2323000" />
+>>>>>>> 47bd8b32208c43f790a112da7ade40f34dd5957d
     </task>
     <task id="LOCAL-00001" summary="创建了biz">
       <created>1606351995604</created>
@@ -410,6 +462,7 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="651" y="274" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1606351657880" />
+<<<<<<< HEAD
     <state x="121" y="0" key="#Project_Structure" timestamp="1606817773203">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -427,6 +480,12 @@
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1606354665367" />
     <state x="199" y="21" width="1097" height="790" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1606817776085" />
+=======
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606814351027">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1606814351027" />
+>>>>>>> 47bd8b32208c43f790a112da7ade40f34dd5957d
     <state x="517" y="113" key="#com.intellij.ide.util.MemberChooser" timestamp="1606355481846">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -444,6 +503,7 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606351805881" />
+<<<<<<< HEAD
     <state x="549" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1606817604450" />
     <state width="1479" height="182" key="GridCell.Tab.0.bottom" timestamp="1606817938437">
       <screen x="0" y="0" width="1536" height="864" />
@@ -523,6 +583,58 @@
     <state width="1479" height="393" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1606817365097" />
     <state x="270" y="0" key="SettingsEditor" timestamp="1606814876853">
       <screen x="0" y="0" width="1536" height="864" />
+=======
+    <state width="1268" height="277" key="GridCell.Tab.0.bottom" timestamp="1606833684808">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606833684808" />
+    <state width="1268" height="277" key="GridCell.Tab.0.center" timestamp="1606833684808">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606833684808" />
+    <state width="1268" height="277" key="GridCell.Tab.0.left" timestamp="1606833684808">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606833684808" />
+    <state width="1268" height="277" key="GridCell.Tab.0.right" timestamp="1606833684808">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606833684808" />
+    <state width="1268" height="277" key="GridCell.Tab.1.bottom" timestamp="1606833684695">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606833684695" />
+    <state width="1268" height="277" key="GridCell.Tab.1.center" timestamp="1606833684694">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1606833684694" />
+    <state width="1268" height="277" key="GridCell.Tab.1.left" timestamp="1606833684694">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1606833684694" />
+    <state width="1268" height="277" key="GridCell.Tab.1.right" timestamp="1606833684694">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606833684694" />
+    <state width="1268" height="277" key="GridCell.Tab.2.bottom" timestamp="1606833684695">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606833684695" />
+    <state width="1268" height="277" key="GridCell.Tab.2.center" timestamp="1606833684695">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1606833684695" />
+    <state width="1268" height="277" key="GridCell.Tab.2.left" timestamp="1606833684695">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1606833684695" />
+    <state width="1268" height="277" key="GridCell.Tab.2.right" timestamp="1606833684695">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1268" height="277" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1606833684695" />
+    <state x="270" y="0" key="SettingsEditor" timestamp="1606355853428">
+      <screen x="0" y="0" width="1536" height="824" />
+>>>>>>> 47bd8b32208c43f790a112da7ade40f34dd5957d
     </state>
     <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606355853428" />
     <state x="270" y="0" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1606814876853" />

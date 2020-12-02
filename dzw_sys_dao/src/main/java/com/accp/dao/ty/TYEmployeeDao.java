@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import com.accp.pojo.ty.Employee;
 import com.accp.pojo.ty.Ment;
 import com.accp.pojo.ty.Employee;
@@ -55,6 +56,18 @@ public interface TYEmployeeDao {
 	 */
 	@Select("SELECT * FROM `employee` WHERE `yid`=#{yid}")
 	public Employee loadEmployee(@Param("yid") Integer yid);
+	
+	/**
+	 * 修改员工
+	 * @param employee
+	 * @return
+	 */
+	@Update("UPDATE `employee` SET `yname`=#{employee.yname},`yaccount`=#{employee.yaccount},`ypwd`=#{employee.ypwd},`ysex`=#{employee.ysex},\r\n" + 
+			" `ybirth`=#{employee.ybirth},`yphone`=#{employee.yphone},`ytel`=#{employee.ytel},`yaddress`=#{employee.yaddress},`yjphone`=#{employee.yjphone},\r\n" + 
+			" `yjname`=#{employee.yjname},`ymoney`=#{employee.ymoney},`yrdate`=#{employee.yrdate},`yjsdate`=#{employee.yjsdate},`yhdate`=#{employee.yhdate},\r\n" + 
+			" `yhjdate`=#{employee.yhjdate},`ymentid`=#{employee.ymentid},`ypostid`=#{employee.ypostid}\r\n" + 
+			" WHERE `yid`=#{employee.yid}")
+	public int updateEmployee(@Param("employee") Employee employee);
 	
 	/**
 	 * 员工删除

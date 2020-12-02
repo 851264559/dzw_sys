@@ -32,22 +32,10 @@
     SELECT * FROM `vehicle` WHERE clientId=#{0}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from client
-    where cId = #{cid,jdbcType=VARCHAR}
+    DELETE FROM `client` WHERE `cId`=#{cid};
+    DELETE FROM `vehicle` WHERE `clientId`=#{cid}
   </delete>
-  <insert id="insert" parameterType="com.accp.pojo.ct.Client" >
-    insert into client (cId, cName, detailedAddress, 
-      linkman, phone, userType, 
-      cardNo, admissionDate, expireDate, 
-      remark, nowDate, integral, 
-      earnest)
-    values (#{cid,jdbcType=VARCHAR}, #{cname,jdbcType=VARCHAR}, #{detailedaddress,jdbcType=VARCHAR}, 
-      #{linkman,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{usertype,jdbcType=INTEGER}, 
-      #{cardno,jdbcType=VARCHAR}, #{admissiondate,jdbcType=DATE}, #{expiredate,jdbcType=DATE}, 
-      #{remark,jdbcType=VARCHAR}, #{nowdate,jdbcType=TIMESTAMP}, #{integral,jdbcType=INTEGER}, 
-      #{earnest,jdbcType=REAL})
-  </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.ct.Client" >
+  <insert id="insertClient">
     insert into client
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="cid != null" >
@@ -80,9 +68,7 @@
       <if test="remark != null" >
         remark,
       </if>
-      <if test="nowdate != null" >
         nowDate,
-      </if>
       <if test="integral != null" >
         integral,
       </if>
@@ -92,28 +78,28 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="cid != null" >
-        #{cid,jdbcType=VARCHAR},
+        #{cid},
       </if>
       <if test="cname != null" >
-        #{cname,jdbcType=VARCHAR},
+        #{cname},
       </if>
       <if test="detailedaddress != null" >
-        #{detailedaddress,jdbcType=VARCHAR},
+        #{detailedaddress},
       </if>
       <if test="linkman != null" >
-        #{linkman,jdbcType=VARCHAR},
+        #{linkman},
       </if>
       <if test="phone != null" >
-        #{phone,jdbcType=VARCHAR},
+        #{phone},
       </if>
       <if test="usertype != null" >
-        #{usertype,jdbcType=INTEGER},
+        #{usertype},
       </if>
       <if test="cardno != null" >
-        #{cardno,jdbcType=VARCHAR},
+        #{cardno},
       </if>
       <if test="admissiondate != null" >
-        #{admissiondate,jdbcType=DATE},
+        #{admissiondate},
       </if>
       <if test="expiredate != null" >
         #{expiredate,jdbcType=DATE},
@@ -121,9 +107,7 @@
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="nowdate != null" >
-        #{nowdate,jdbcType=TIMESTAMP},
-      </if>
+        NOW(),
       <if test="integral != null" >
         #{integral,jdbcType=INTEGER},
       </if>
@@ -132,7 +116,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.ct.Client" >
+  <update id="updateByPrimaryKeySelective">
     update client
     <set >
       <if test="cname != null" >
@@ -172,22 +156,6 @@
         earnest = #{earnest,jdbcType=REAL},
       </if>
     </set>
-    where cId = #{cid,jdbcType=VARCHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.ct.Client" >
-    update client
-    set cName = #{cname,jdbcType=VARCHAR},
-      detailedAddress = #{detailedaddress,jdbcType=VARCHAR},
-      linkman = #{linkman,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      userType = #{usertype,jdbcType=INTEGER},
-      cardNo = #{cardno,jdbcType=VARCHAR},
-      admissionDate = #{admissiondate,jdbcType=DATE},
-      expireDate = #{expiredate,jdbcType=DATE},
-      remark = #{remark,jdbcType=VARCHAR},
-      nowDate = #{nowdate,jdbcType=TIMESTAMP},
-      integral = #{integral,jdbcType=INTEGER},
-      earnest = #{earnest,jdbcType=REAL}
     where cId = #{cid,jdbcType=VARCHAR}
   </update>
 </mapper>

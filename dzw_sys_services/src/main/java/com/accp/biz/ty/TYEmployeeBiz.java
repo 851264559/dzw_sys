@@ -61,6 +61,11 @@ public class TYEmployeeBiz {
 		return dao.loadEmployee(yid);
 	}
 	
+	//修改员工
+	public void modifyEmployee(Employee employee) {
+		dao.updateEmployee(employee);
+	}
+	
 	//员工删除
 	public void removeyid(Integer yid) {
 		dao.deleteyid(yid);

@@ -1,7 +1,7 @@
 package com.accp.pojo.ct;
 
 import java.util.Date;
-import java.util.*;
+import java.util.List;
 
 /**
  * 用户信息
@@ -18,7 +18,7 @@ public class Client {
     //手机
     private String phone;
     //用户类别
-    private Integer usertype;
+    private String usertype;
     //会员卡号
     private String cardno;
     //入会日期
@@ -67,7 +67,7 @@ public class Client {
 
     public Client(){}
 
-    public Client(String cid, String cname, String detailedaddress, String linkman, String phone, Integer usertype, String cardno, Date admissiondate, Date expiredate, String remark, Date nowdate, Integer integral, Float earnest) {
+    public Client(String cid, String cname, String detailedaddress, String linkman, String phone, String usertype, String cardno, Date admissiondate, Date expiredate, String remark, Date nowdate, Integer integral, Float earnest) {
         this.cid = cid;
         this.cname = cname;
         this.detailedaddress = detailedaddress;
@@ -123,11 +123,11 @@ public class Client {
         this.phone = phone == null ? null : phone.trim();
     }
 
-    public Integer getUsertype() {
+    public String getUsertype() {
         return usertype;
     }
 
-    public void setUsertype(Integer usertype) {
+    public void setUsertype(String usertype) {
         this.usertype = usertype;
     }
 
