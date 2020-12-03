@@ -11,8 +11,9 @@
 		FROM `employee` AS e
 		INNER JOIN `ment` AS m ON m.`bid`=e.`ymentid`
 		<where>
+			`yquitid`=2
 			<if test="name!=null and name!='null'">
-				`yname` = #{name}
+				and `yname` = #{name}
 			</if>
 		</where>
 	</select>
@@ -23,9 +24,9 @@
 		INNER JOIN `ment` m ON m.`bid`=e.`ymentid`
 		INNER JOIN `postb` p ON p.`zid`=e.`ypostid`
 		<where>
-		
+			`yquitid`=2
 			<if test="bid!=0">
-				m.`bid`=#{bid}
+			 and m.`bid`=#{bid}
 			</if>
 		</where>
 	</select>

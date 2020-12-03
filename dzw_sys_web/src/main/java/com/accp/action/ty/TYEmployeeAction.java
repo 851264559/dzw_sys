@@ -78,7 +78,6 @@ public class TYEmployeeAction {
 	//修改页面详情
 	@GetMapping("cc/{yid}")
 	public Employee getEdocentry(@PathVariable Integer yid) {
-		System.out.println("hhhhhhhhhh"+yid);
 		return biz.getEmployee(yid);
 	}
 	
@@ -111,6 +110,7 @@ public class TYEmployeeAction {
 		Map<String, Object> message = new HashMap<String, Object>();
 		if (emp != null) {
 			session.setAttribute("EMPLOYEE", emp);// 服务器保存
+			System.out.println(session.getAttribute("EMPLOYEE"));
 			message.put("code", "200");
 			message.put("msg", "ok");
 			message.put("employee", emp);// 客户端保存
@@ -121,6 +121,11 @@ public class TYEmployeeAction {
 		return message;
 	}
 	
+	/**
+	 * 获得功能树
+	 * @param session
+	 * @return
+	 */
 	@GetMapping("getFunTree")
 	public List getEmpFunTree(HttpSession session){
 		Employee emp = (Employee) session.getAttribute("EMPLOYEE");
@@ -150,4 +155,28 @@ public class TYEmployeeAction {
 		}
 		return tree;
 	}
+	
+	//离职登记查询
+	@GetMapping("t/{p}/{s}")
+	public PageInfo<VO> getText(@PathVariable Integer p, @PathVariable Integer s) {
+		return biz.queryText(p, s);
+	}
+	
+	//离职登记回滚
+	@PutMapping("hg/{yid}")
+	public Map<String, String> updateTextInfo(@PathVariable Integer yid) {
+		Map<String, String> message = new HashMap<String, String>();
+		biz.modifyText(yid);
+		message.put("code", "200");
+		message.put("msg", "ok");
+		return message;
+	}
+	
+	//查询离职登记新增里的部门姓名
+	@GetMapping("xzlz/{ymentid}")
+	public List<VO> getMentxz(@PathVariable Integer ymentid) {
+		System.out.println("a "+ymentid);
+		return biz.queryVOxz(ymentid);
+	}
+	
 }
