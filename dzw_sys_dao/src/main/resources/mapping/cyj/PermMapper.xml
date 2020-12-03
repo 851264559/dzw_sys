@@ -1,93 +1,110 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.accp.dao.cyj.PermMapper" >
-  <resultMap id="BaseResultMap" type="com.accp.pojo.cyj.Perm" >
-    <id column="pid" property="pid" jdbcType="INTEGER" />
-    <result column="rid" property="rid" jdbcType="INTEGER" />
-    <result column="fid" property="fid" jdbcType="INTEGER" />
-    <result column="creatdate" property="creatdate" jdbcType="DATE" />
-    <result column="createby" property="createby" jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    pid, rid, fid, creatdate, createby
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from tbl_perm
-    where pid = #{pid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from tbl_perm
-    where pid = #{pid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.accp.pojo.cyj.Perm" >
-    insert into tbl_perm (pid, rid, fid, 
-      creatdate, createby)
-    values (#{pid,jdbcType=INTEGER}, #{rid,jdbcType=INTEGER}, #{fid,jdbcType=INTEGER}, 
-      #{creatdate,jdbcType=DATE}, #{createby,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.accp.pojo.cyj.Perm" >
-    insert into tbl_perm
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="pid != null" >
-        pid,
-      </if>
-      <if test="rid != null" >
-        rid,
-      </if>
-      <if test="fid != null" >
-        fid,
-      </if>
-      <if test="creatdate != null" >
-        creatdate,
-      </if>
-      <if test="createby != null" >
-        createby,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="pid != null" >
-        #{pid,jdbcType=INTEGER},
-      </if>
-      <if test="rid != null" >
-        #{rid,jdbcType=INTEGER},
-      </if>
-      <if test="fid != null" >
-        #{fid,jdbcType=INTEGER},
-      </if>
-      <if test="creatdate != null" >
-        #{creatdate,jdbcType=DATE},
-      </if>
-      <if test="createby != null" >
-        #{createby,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.cyj.Perm" >
-    update tbl_perm
-    <set >
-      <if test="rid != null" >
-        rid = #{rid,jdbcType=INTEGER},
-      </if>
-      <if test="fid != null" >
-        fid = #{fid,jdbcType=INTEGER},
-      </if>
-      <if test="creatdate != null" >
-        creatdate = #{creatdate,jdbcType=DATE},
-      </if>
-      <if test="createby != null" >
-        createby = #{createby,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where pid = #{pid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.cyj.Perm" >
-    update tbl_perm
-    set rid = #{rid,jdbcType=INTEGER},
-      fid = #{fid,jdbcType=INTEGER},
-      creatdate = #{creatdate,jdbcType=DATE},
-      createby = #{createby,jdbcType=VARCHAR}
-    where pid = #{pid,jdbcType=INTEGER}
-  </update>
+<mapper namespace="com.accp.dao.cyj.PermMapper">
+	<resultMap id="BaseResultMap" type="com.accp.pojo.cyj.Perm">
+		<id column="pid" property="pid" jdbcType="INTEGER" />
+		<result column="rid" property="rid" jdbcType="INTEGER" />
+		<result column="fid" property="fid" jdbcType="INTEGER" />
+		<result column="creatdate" property="creatdate" jdbcType="DATE" />
+		<result column="createby" property="createby"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		pid, rid, fid, creatdate, createby
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from tbl_perm
+		where pid = #{pid,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey"
+		parameterType="java.lang.Integer">
+		delete from tbl_perm
+		where pid = #{pid,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.accp.pojo.cyj.Perm">
+		insert into tbl_perm (pid, rid, fid,
+		creatdate, createby)
+		values (null, #{rid,jdbcType=INTEGER}, #{fid,jdbcType=INTEGER},
+		#{creatdate,jdbcType=DATE}, #{createby,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective"
+		parameterType="com.accp.pojo.cyj.Perm">
+		insert into tbl_perm
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="pid != null">
+				pid,
+			</if>
+			<if test="rid != null">
+				rid,
+			</if>
+			<if test="fid != null">
+				fid,
+			</if>
+			<if test="creatdate != null">
+				creatdate,
+			</if>
+			<if test="createby != null">
+				createby,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="pid != null">
+				#{pid,jdbcType=INTEGER},
+			</if>
+			<if test="rid != null">
+				#{rid,jdbcType=INTEGER},
+			</if>
+			<if test="fid != null">
+				#{fid,jdbcType=INTEGER},
+			</if>
+			<if test="creatdate != null">
+				#{creatdate,jdbcType=DATE},
+			</if>
+			<if test="createby != null">
+				#{createby,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective"
+		parameterType="com.accp.pojo.cyj.Perm">
+		update tbl_perm
+		<set>
+			<if test="rid != null">
+				rid = #{rid,jdbcType=INTEGER},
+			</if>
+			<if test="fid != null">
+				fid = #{fid,jdbcType=INTEGER},
+			</if>
+			<if test="creatdate != null">
+				creatdate = #{creatdate,jdbcType=DATE},
+			</if>
+			<if test="createby != null">
+				createby = #{createby,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where pid = #{pid,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey"
+		parameterType="com.accp.pojo.cyj.Perm">
+		update tbl_perm
+		set rid = #{rid,jdbcType=INTEGER},
+		fid = #{fid,jdbcType=INTEGER},
+		creatdate = #{creatdate,jdbcType=DATE},
+		createby = #{createby,jdbcType=VARCHAR}
+		where pid = #{pid,jdbcType=INTEGER}
+	</update>
+
+	<!-- void insertPerm(@Param("rid")Integer rid,@Param("fid")List<Integer> 
+		fid,@Param("empName")String empName); -->
+	<insert id="insertPerm">
+		delete from tbl_perm
+		where rid = #{rid,jdbcType=INTEGER};
+		insert into tbl_perm values
+		<foreach collection="fid" item="fid" separator=",">
+			(null,#{rid},#{fid},now(),#{empName})
+		</foreach>
+	</insert>
 </mapper>

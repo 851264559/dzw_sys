@@ -83,4 +83,33 @@ public interface TYEmployeeDao {
 	 */
 	public Employee login(@Param("yaccount")String yaccount,@Param("ypwd")String ypwd);
 	
+	/**
+	 * 离职登记查询
+	 * @return
+	 */
+	@Select("SELECT m.`bname`,p.`zname`,e.`yid`,e.`yname`,e.`ysex`,d.`ldate`,d.`lreason`\r\n" + 
+			" FROM `employee` e\r\n" + 
+			" INNER JOIN `ment` m ON m.`bid`=e.`ymentid`\r\n" + 
+			" INNER JOIN `postb` p ON p.`zid`=e.`ypostid`\r\n" + 
+			" INNER JOIN `dimissiontext` d ON d.`lid`=e.`yljlid`\r\n" + 
+			" WHERE `yquitid`=1")
+	public List<VO> queryAlltext();
+	
+	/**
+	 * 离职登记回滚
+	 * @param employee
+	 * @return
+	 */
+	@Update("UPDATE `employee` SET `yquitid`=2 WHERE `yid`=#{yid}")
+	public int updateText(@Param("yid") Integer yid);
+	
+	/**
+	 * 查询离职登记新增里的部门姓名
+	 * @return
+	 */
+	@Select("SELECT e.`yname` FROM `employee` e\r\n" + 
+			" INNER JOIN `ment` m ON e.`ymentid`=m.`bid`\r\n" + 
+			" WHERE e.`ymentid`=#{ymentid} and e.`yquitid`=2")
+	public List<VO> queryMentxz(@Param("ymentid") Integer ymentid);
+	
 }

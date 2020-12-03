@@ -79,4 +79,21 @@ public class TYEmployeeBiz {
 	public Employee login(String yaccount,String ypwd) {
 		return dao.login(yaccount, ypwd);
 	}
+	
+	//离职登记查询
+	public PageInfo<VO> queryText(Integer pageNum, Integer pageSize){
+		PageHelper.startPage(pageNum, pageSize);
+		return new PageInfo<VO>(dao.queryAlltext());
+	}
+	
+	//离职登记回滚
+	public void modifyText(@Param("yid") Integer yid) {
+		dao.updateText(yid);
+	}
+	
+	//查询离职登记新增里的部门姓名
+	public List<VO> queryVOxz(@Param("ymentid") Integer ymentid){
+		return dao.queryMentxz(ymentid);
+	}
+	
 }

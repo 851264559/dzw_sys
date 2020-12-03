@@ -67,4 +67,11 @@ public class Function {
     public void setCreatedate(Date createdate) {
         this.createdate = createdate;
     }
+
+	@Override
+	public String toString() {
+		return "Function [fid=" + fid + ", fcode=" + fcode + ", fname=" + fname + ", fpid=" + fpid + ", createdate="
+				+ createdate + ", parentFun=" + parentFun + "]";
+	}
+    
 }
