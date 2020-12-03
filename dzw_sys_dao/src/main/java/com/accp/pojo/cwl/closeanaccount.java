@@ -11,11 +11,36 @@ public class closeanaccount {
 
     private String clearing;//结算方式
 
+    public closeanaccount(Integer id, String saleno, String receiptstype, String clearing, Float clearingmoney, String principal, String license, String zhuangtai, String customername, String frameno, String vehiclemodel, Date timeofcompletion) {
+        this.id = id;
+        this.saleno = saleno;
+        this.receiptstype = receiptstype;
+        this.clearing = clearing;
+        this.clearingmoney = clearingmoney;
+        this.principal = principal;
+        this.license = license;
+        this.zhuangtai = zhuangtai;
+        this.customername = customername;
+        this.frameno = frameno;
+        this.vehiclemodel = vehiclemodel;
+        this.timeofcompletion = timeofcompletion;
+    }
+
+    public String getZhuangtai() {
+        return zhuangtai;
+    }
+
+    public void setZhuangtai(String zhuangtai) {
+        this.zhuangtai = zhuangtai;
+    }
+
     private Float clearingmoney;//结算金额
 
     private String principal;//负责人
 
     private String license;//车牌号
+
+    private String zhuangtai;//状态
 
     private String customername;//客户名称
 
