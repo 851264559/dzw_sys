@@ -19,5 +19,9 @@ public class testOnCompletionBiz {
 				return tBiz.queryInfosByCondition(startTime, endTime, repairOrder, theDocumentsState, licensePlateNumber, VIN);
 			}
 			
+			public Integer modifyByPrimaryKeySelective(TestOnCompletion record) {
+				return tBiz.updateByPrimaryKeySelective(record);
+			}
+			
 			
 }
