@@ -56,8 +56,8 @@
 		<mvc:mapping path="/**" allowed-origins="*"
 			allow-credentials="true" max-age="12000" allowed-methods="*" />
 	</mvc:cors>
-	
-		<!-- 权限拦截器 -->
+<!-- 	
+		权限拦截器
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
@@ -65,7 +65,7 @@
 			<mvc:exclude-mapping path="/ty/api/employee/loginOut" />
 			<bean class="com.accp.interceptor.SessionValidateInterceptor" />
 		</mvc:interceptor>
-	</mvc:interceptors>
+	</mvc:interceptors> -->
 
 	<!-- 视图资源文件视图解析器 -->
 	<!-- <bean

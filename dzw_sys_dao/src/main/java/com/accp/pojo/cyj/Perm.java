@@ -1,6 +1,7 @@
 package com.accp.pojo.cyj;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * 角色功能表
@@ -16,8 +17,18 @@ public class Perm {
     private Date creatdate;//创建时间
 
     private String createby;//创建人
+    
+    private List<Integer> fidList;//新增用
+    
+    public List<Integer> getFidList() {
+		return fidList;
+	}
 
-    public Integer getPid() {
+	public void setFidList(List<Integer> fidList) {
+		this.fidList = fidList;
+	}
+
+	public Integer getPid() {
         return pid;
     }
 
