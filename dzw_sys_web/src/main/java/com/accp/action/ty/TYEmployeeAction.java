@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.accp.biz.ty.TYEmployeeBiz;
 import com.accp.biz.ty.TYMentBiz;
 import com.accp.pojo.cyj.Function;
+import com.accp.pojo.ty.Dimissiontext;
 import com.accp.pojo.ty.Employee;
 import com.accp.pojo.ty.Ment;
 import com.accp.pojo.ty.Postb;
@@ -175,8 +176,17 @@ public class TYEmployeeAction {
 	//查询离职登记新增里的部门姓名
 	@GetMapping("xzlz/{ymentid}")
 	public List<VO> getMentxz(@PathVariable Integer ymentid) {
-		System.out.println("a "+ymentid);
+		//System.out.println("a "+ymentid);
 		return biz.queryVOxz(ymentid);
+	}
+	
+	@PutMapping("jl/{lreason}/{ymentid}/{yname}")
+	public Map<String, String> updateText(@PathVariable String lreason,@PathVariable Integer ymentid,@PathVariable String yname) {
+		Map<String, String> message = new HashMap<String, String>();
+		biz.addText(lreason, ymentid, yname);
+		message.put("code", "200");
+		message.put("msg", "ok");
+		return message;
 	}
 	
 }
