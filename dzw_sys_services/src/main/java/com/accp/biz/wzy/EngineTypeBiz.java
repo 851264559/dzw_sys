@@ -2,7 +2,6 @@ package com.accp.biz.wzy;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +14,7 @@ public class EngineTypeBiz {
 	@Autowired
 	private IEngineTypeDao dao;
 	
-	public EngineType queryEngineType(String enginetypename) {
+	public List<EngineType> queryEngineType(String enginetypename) {
 		return dao.queryEngineType(enginetypename);
 	}
 	
@@ -23,8 +22,8 @@ public class EngineTypeBiz {
 		return dao.delEngineType(enginetypeid);
 	}
 	
-	public int addEngineType(String enginetypename) {
-		return dao.addEngineType(enginetypename);
+	public int addEngineType(EngineType engineType) {
+		return dao.addEngineType(engineType);
 	}
 	
 	public List<EngineType> queryAll(){
