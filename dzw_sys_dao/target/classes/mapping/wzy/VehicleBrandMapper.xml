@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.wzy.IVehicleBrandDao">
+	<resultMap id="vehicle" type="com.accp.pojo.wzy.VehicleBrand" autoMapping="true">
+		<id column="vbrandid" property="vbrandid"
+			jdbcType="INTEGER" />
+	</resultMap>
+	<select id="queryAll" resultMap="vehicle">
+		SELECT * FROM `vehiclebrand`
+	</select>
+	<select id="queryVehicleBrand" resultMap="vehicle">
+		SELECT * FROM `vehiclebrand` 
+		WHERE `vbrandid`=#{parameter1} OR `vbrandno`=#{parameter1} OR `vbrandname`=#{parameter1}
+	</select>
+	<insert id="addVehicleBrand">
+		INSERT INTO `dzw_database`.`vehiclebrand` (`vbrandno`,`vbrandname`)
+		VALUES(#{vehiclebrand.vbrandno},#{vehiclebrand.vbrandname})
+	</insert>
+	<delete id="delVehicleBrand">
+		DELETE FROM `dzw_database`.`vehiclebrand` 
+		WHERE `vbrandid` = #{vbrandid}
+	</delete>
+	<update id="updateVehicleBrand">
+		UPDATE `dzw_database`.`vehiclebrand` 
+		SET `vbrandno` = #{vehiclebrand.vbrandno},`vbrandname` = #{vehiclebrand.vbrandname} 
+		WHERE `vbrandid` = #{vehiclebrand.vbrandid}
+	</update>
+</mapper>

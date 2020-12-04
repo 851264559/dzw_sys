@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.wzy.IVehicleTypeDao">
+	<resultMap id="vehicle" type="com.accp.pojo.wzy.VehicleType"
+		autoMapping="true">
+		<id column="vbrandid" property="vbrandid" jdbcType="INTEGER" />
+	</resultMap>
+	<select id="queryVehicleTypeById" resultMap="vehicle">
+		SELECT * FROM
+		`vehicletype` vt INNER JOIN `vehiclebrand` vb ON
+		vt.`carbrand`=vb.`vbrandid`
+		INNER JOIN `enginetype` et ON vt.`enginetypeid`=et.`enginetypeid`
+		WHERE `carbrand`=#{vbrandid}
+	</select>
+	<select id="queryAll" resultMap="vehicle">
+		SELECT * FROM `vehicletype` vt
+		INNER JOIN `vehiclebrand` vb ON vt.`carbrand`=vb.`vbrandid`
+		INNER JOIN
+		`enginetype` et ON vt.`enginetypeid`=et.`enginetypeid`
+	</select>
+	<select id="queryVehicleType" resultMap="vehicle">
+		SELECT * FROM
+		`vehicletype`
+		WHERE `vtypeno`=#{parameter2} OR
+		`vtypename`=#{parameter2}
+	</select>
+	<insert id="addVehicleType">
+		INSERT INTO `dzw_database`.`vehicletype`
+		(`enginetypeid`,`carbrand`,`vtypeno`,`vtypename`,`vprice`,`vdate`,`vpower`,`fuelmark`)
+		VALUES(#{vehicletype.enginetypeid},#{vehicletype.carbrand},#{vehicletype.vtypeno},#{vehicletype.vtypename},#{vehicletype.vprice},#{vehicletype.vdate},#{vehicletype.vpower},#{vehicletype.fuelmark})
+		;
+	</insert>
+	<delete id="delVehicleType">
+		DELETE FROM `dzw_database`.`vehicletype`
+		WHERE
+		`vtypeid` = #{vtypeid}
+	</delete>
+	<update id="updateVehicleType">
+		UPDATE `dzw_database`.`vehicletype`
+		SET `enginetypeid`
+		= #{vehicletype.enginetypeid},`carbrand` =
+		#{vehicletype.carbrand},`vtypeno` = #{vehicletype.vtypeno},`vtypename`
+		= #{vehicletype.vtypename},`vprice` = #{vehicletype.vprice}
+		WHERE
+		`vtypeid` = #{vehicletype.vtypeid} ;
+	</update>
+</mapper>

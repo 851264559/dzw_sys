@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.wzy.IEngineTypeDao">
+	<resultMap id="engine" type="com.accp.pojo.wzy.EngineType" autoMapping="true">
+		<id column="enginetypeid" property="enginetypeid"
+			jdbcType="INTEGER" />
+	</resultMap>
+	<select id="queryAll" resultMap="engine">
+		select * from enginetype
+	</select>
+	<insert id="addEngineType">
+		insert into enginetype(enginetypename)
+		values(#{engineType.enginetypename})
+	</insert>
+	<delete id="delEngineType">
+		delete from enginetype 
+		where enginetypeid=#{enginetypeid}
+	</delete>
+	<select id="queryEngineType" resultMap="engine">
+		select * from enginetype
+		where enginetypename=#{enginetypename}
+	</select>
+</mapper>
