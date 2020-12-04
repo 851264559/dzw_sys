@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.cwl.closeanaccountMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.cwl.closeanaccount" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="saleNo" property="saleno" jdbcType="VARCHAR" />
+    <result column="receiptsType" property="receiptstype" jdbcType="VARCHAR" />
+    <result column="clearing" property="clearing" jdbcType="VARCHAR" />
+    <result column="zhuangtai" property="zhuangtai" />
+    <result column="clearingMoney" property="clearingmoney" jdbcType="REAL" />
+    <result column="principal" property="principal" jdbcType="VARCHAR" />
+    <result column="license" property="license" jdbcType="VARCHAR" />
+    <result column="customerName" property="customername" jdbcType="VARCHAR" />
+    <result column="frameNo" property="frameno" jdbcType="VARCHAR" />
+    <result column="vehicleModel" property="vehiclemodel" jdbcType="VARCHAR" />
+    <result column="timeOfCompletion" property="timeofcompletion" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, saleNo, receiptsType, clearing, clearingMoney, principal, license, customerName, 
+    frameNo, vehicleModel, timeOfCompletion
+  </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select *
+    from closeanaccount
+    where zhuangtai = #{zt}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from closeanaccount
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from closeanaccount
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.cwl.closeanaccount" >
+    insert into closeanaccount (id, saleNo, receiptsType, 
+      clearing, clearingMoney, principal, 
+      license, customerName, frameNo, 
+      vehicleModel, timeOfCompletion)
+    values (#{id,jdbcType=INTEGER}, #{saleno,jdbcType=VARCHAR}, #{receiptstype,jdbcType=VARCHAR}, 
+      #{clearing,jdbcType=VARCHAR}, #{clearingmoney,jdbcType=REAL}, #{principal,jdbcType=VARCHAR}, 
+      #{license,jdbcType=VARCHAR}, #{customername,jdbcType=VARCHAR}, #{frameno,jdbcType=VARCHAR}, 
+      #{vehiclemodel,jdbcType=VARCHAR}, #{timeofcompletion,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.cwl.closeanaccount" >
+    insert into closeanaccount
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="saleno != null" >
+        saleNo,
+      </if>
+      <if test="receiptstype != null" >
+        receiptsType,
+      </if>
+      <if test="clearing != null" >
+        clearing,
+      </if>
+      <if test="clearingmoney != null" >
+        clearingMoney,
+      </if>
+      <if test="principal != null" >
+        principal,
+      </if>
+      <if test="license != null" >
+        license,
+      </if>
+      <if test="customername != null" >
+        customerName,
+      </if>
+      <if test="frameno != null" >
+        frameNo,
+      </if>
+      <if test="vehiclemodel != null" >
+        vehicleModel,
+      </if>
+      <if test="timeofcompletion != null" >
+        timeOfCompletion,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="saleno != null" >
+        #{saleno,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptstype != null" >
+        #{receiptstype,jdbcType=VARCHAR},
+      </if>
+      <if test="clearing != null" >
+        #{clearing,jdbcType=VARCHAR},
+      </if>
+      <if test="clearingmoney != null" >
+        #{clearingmoney,jdbcType=REAL},
+      </if>
+      <if test="principal != null" >
+        #{principal,jdbcType=VARCHAR},
+      </if>
+      <if test="license != null" >
+        #{license,jdbcType=VARCHAR},
+      </if>
+      <if test="customername != null" >
+        #{customername,jdbcType=VARCHAR},
+      </if>
+      <if test="frameno != null" >
+        #{frameno,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclemodel != null" >
+        #{vehiclemodel,jdbcType=VARCHAR},
+      </if>
+      <if test="timeofcompletion != null" >
+        #{timeofcompletion,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.cwl.closeanaccount" >
+    update closeanaccount
+    <set >
+      <if test="saleno != null" >
+        saleNo = #{saleno,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptstype != null" >
+        receiptsType = #{receiptstype,jdbcType=VARCHAR},
+      </if>
+      <if test="clearing != null" >
+        clearing = #{clearing,jdbcType=VARCHAR},
+      </if>
+      <if test="clearingmoney != null" >
+        clearingMoney = #{clearingmoney,jdbcType=REAL},
+      </if>
+      <if test="principal != null" >
+        principal = #{principal,jdbcType=VARCHAR},
+      </if>
+      <if test="license != null" >
+        license = #{license,jdbcType=VARCHAR},
+      </if>
+      <if test="customername != null" >
+        customerName = #{customername,jdbcType=VARCHAR},
+      </if>
+      <if test="frameno != null" >
+        frameNo = #{frameno,jdbcType=VARCHAR},
+      </if>
+      <if test="vehiclemodel != null" >
+        vehicleModel = #{vehiclemodel,jdbcType=VARCHAR},
+      </if>
+      <if test="timeofcompletion != null" >
+        timeOfCompletion = #{timeofcompletion,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateZhuangtai" parameterType="com.accp.pojo.cwl.closeanaccount" >
+    update closeanaccount
+    set zhuangtai=#{zhuangtai}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.cwl.closeanaccount" >
+    update closeanaccount
+    set saleNo = #{saleno,jdbcType=VARCHAR},
+      receiptsType = #{receiptstype,jdbcType=VARCHAR},
+      clearing = #{clearing,jdbcType=VARCHAR},
+      clearingMoney = #{clearingmoney,jdbcType=REAL},
+      principal = #{principal,jdbcType=VARCHAR},
+      license = #{license,jdbcType=VARCHAR},
+      customerName = #{customername,jdbcType=VARCHAR},
+      frameNo = #{frameno,jdbcType=VARCHAR},
+      vehicleModel = #{vehiclemodel,jdbcType=VARCHAR},
+      timeOfCompletion = #{timeofcompletion,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

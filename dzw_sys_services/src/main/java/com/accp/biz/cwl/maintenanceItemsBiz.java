@@ -22,4 +22,12 @@ public class maintenanceItemsBiz {
 			public int addMaintenanceitemsSelective(maintenanceitems record) {
 				return mM.insertSelective(record);
 			}
+			
+			public int modifyByPrimaryKeySelective(maintenanceitems record) {
+				return mM.updateByPrimaryKeySelective(record);
+			}
+			
+			public int removeByPrimaryKey(String oid) {
+				return mM.deleteByPrimaryKey(oid);
+			}
 }

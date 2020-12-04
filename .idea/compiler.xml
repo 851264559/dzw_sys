@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="dzw_sys_services" />
         <module name="dzw_sys_common" />
+        <module name="dzw_sys_services" />
         <module name="dzw_sys_web" />
         <module name="dzw_sys_dao" />
       </profile>
