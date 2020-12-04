@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface VehicleMapper {
     /**
-     * 根据主表id删除从表
+     * 根据主表id删除从表1
      * @param vid
      * @return
      */

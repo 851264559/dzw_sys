@@ -19,7 +19,7 @@
             <property name="enableSubPackages" value="true"/>  
             <property name="trimStrings" value="true"/>  
         </javaModelGenerator> -->
-        <javaModelGenerator targetPackage="com.accp.pojo.cyj" targetProject="src/main/java">  
+        <javaModelGenerator targetPackage="com.accp.pojo.cwl" targetProject="src/main/java">  
             <property name="enableSubPackages" value="true"/>  
             <property name="trimStrings" value="true"/>  
         </javaModelGenerator>  
@@ -27,14 +27,14 @@
        <!--  <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources">  
             <property name="enableSubPackages" value="true"/>  
         </sqlMapGenerator>  --> 
-        <sqlMapGenerator targetPackage="mapping/cyj" targetProject="src/main/resources">  
+        <sqlMapGenerator targetPackage="mapping/cwl" targetProject="src/main/resources">  
             <property name="enableSubPackages" value="true"/>  
         </sqlMapGenerator>
         <!--dao生成位置-->  
        <!--  <javaClientGenerator type="XMLMAPPER" targetPackage="com.accp.dao" targetProject="src/main/java">  
             <property name="enableSubPackages" value="true"/>  
         </javaClientGenerator>  -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.accp.dao.cyj" targetProject="src/main/java">  
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.accp.dao.cwl" targetProject="src/main/java">  
             <property name="enableSubPackages" value="true"/>  
         </javaClientGenerator> 
         <!-- 
@@ -42,10 +42,10 @@
 		domainObjectName是实体类名
 		-->  
 		<!--表1-->
-        <table tableName="tbl_perm" domainObjectName="Perm" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="tbl_function" domainObjectName="Function" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <!-- <table tableName="tbl_perm" domainObjectName="Perm" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="tbl_function" domainObjectName="Function" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table> -->
        
-       
+       <table tableName="closeanaccount" domainObjectName="closeanaccount" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
        <!-- 生成指令：mybatis-generator:generate -->
 
        </context>  

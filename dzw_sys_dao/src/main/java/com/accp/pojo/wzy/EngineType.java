@@ -1,7 +1,7 @@
 package com.accp.pojo.wzy;
 
 /**
- * 发动机品牌实体类
+ * 发动机品牌
  * @author wzy
  *
  */

@@ -23,4 +23,5 @@ public interface maintenanceitemsMapper {
     @Select("SELECT * FROM maintenanceitems WHERE workOrderNumber = #{wONum}")
     public List<maintenanceitems> queryMaintenanceitemsByWorkOrderNumber(@Param("wONum") String WorkOrderNumber);
     
+    public List<maintenanceitems> queryMaintenanceitemsByCarNumber(@Param("cNum") String CarNumber);
 }

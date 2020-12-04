@@ -3,9 +3,11 @@ package com.accp.action.cwl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,5 +30,20 @@ public class maintenanceItemsAction {
 			@PostMapping("/add")
 			public int addMaintenanceitemsSelective(@RequestBody maintenanceitems record) {
 				return mBiz.addMaintenanceitemsSelective(record);
+			}
+			
+			@PutMapping("/modify")
+			public int modifyByPrimaryKeySelective(@RequestBody maintenanceitems record) {
+				return mBiz.modifyByPrimaryKeySelective(record);
+			}
+			
+			@DeleteMapping("/{oid}")
+			public int removeByPrimaryKey(@PathVariable String oid) {
+				return mBiz.removeByPrimaryKey(oid);
+			}
+			
+			@GetMapping("/carNum/{CarNumber}")
+			public List<maintenanceitems> queryMaintenanceitemsByCarNumber(@PathVariable String CarNumber){
+				return mBiz.queryMaintenanceitemsByCarNumber(CarNumber);
 			}
 }
