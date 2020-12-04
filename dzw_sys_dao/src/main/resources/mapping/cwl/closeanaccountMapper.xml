@@ -6,6 +6,7 @@
     <result column="saleNo" property="saleno" jdbcType="VARCHAR" />
     <result column="receiptsType" property="receiptstype" jdbcType="VARCHAR" />
     <result column="clearing" property="clearing" jdbcType="VARCHAR" />
+    <result column="zhuangtai" property="zhuangtai" />
     <result column="clearingMoney" property="clearingmoney" jdbcType="REAL" />
     <result column="principal" property="principal" jdbcType="VARCHAR" />
     <result column="license" property="license" jdbcType="VARCHAR" />
@@ -18,6 +19,11 @@
     id, saleNo, receiptsType, clearing, clearingMoney, principal, license, customerName, 
     frameNo, vehicleModel, timeOfCompletion
   </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select *
+    from closeanaccount
+    where zhuangtai = #{zt}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -145,6 +151,11 @@
         timeOfCompletion = #{timeofcompletion,jdbcType=DATE},
       </if>
     </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateZhuangtai" parameterType="com.accp.pojo.cwl.closeanaccount" >
+    update closeanaccount
+    set zhuangtai=#{zhuangtai}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.accp.pojo.cwl.closeanaccount" >

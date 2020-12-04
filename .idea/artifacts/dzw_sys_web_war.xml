@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="dzw_sys_web_war">
+  <artifact type="war" name="dzw_sys_web:war">
     <output-path>$PROJECT_DIR$/dzw_sys_web/target</output-path>
     <properties id="maven-jee-properties">
       <options>
@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="dzw_sys_web_war.war">
+    <root id="archive" name="dzw_sys.war">
       <element id="artifact" artifact-name="dzw_sys_web:war exploded" />
     </root>
   </artifact>
