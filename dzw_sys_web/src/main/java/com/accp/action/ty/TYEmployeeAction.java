@@ -179,4 +179,14 @@ public class TYEmployeeAction {
 		return biz.queryVOxz(ymentid);
 	}
 	
+	@GetMapping("loginout")
+	public Map<String, String> loginout(HttpSession session){
+		session.removeAttribute("EMPLOYEE");
+		session.invalidate();
+		Map<String, String> message = new HashMap<String, String>();
+		message.put("code", "200");
+		message.put("msg", "ok");
+		return message;
+	}
+	
 }
