@@ -30,4 +30,8 @@ public class maintenanceItemsBiz {
 			public int removeByPrimaryKey(String oid) {
 				return mM.deleteByPrimaryKey(oid);
 			}
+			
+			public List<maintenanceitems> queryMaintenanceitemsByCarNumber(String CarNumber){
+				return mM.queryMaintenanceitemsByCarNumber(CarNumber);
+			}
 }
