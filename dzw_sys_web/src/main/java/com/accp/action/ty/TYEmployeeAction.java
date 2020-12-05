@@ -180,18 +180,19 @@ public class TYEmployeeAction {
 		return biz.queryVOxz(ymentid);
 	}
 	
-<<<<<<< HEAD
 	@GetMapping("loginout")
 	public Map<String, String> loginout(HttpSession session){
 		session.removeAttribute("EMPLOYEE");
 		session.invalidate();
 		Map<String, String> message = new HashMap<String, String>();
-=======
+		message.put("code", "200");
+		message.put("msg", "ok");
+		return message;
+	}
 	@PutMapping("jl/{lreason}/{ymentid}/{yname}")
 	public Map<String, String> updateText(@PathVariable String lreason,@PathVariable Integer ymentid,@PathVariable String yname) {
 		Map<String, String> message = new HashMap<String, String>();
 		biz.addText(lreason, ymentid, yname);
->>>>>>> 39c4a9e272d61ebee6f7813efffe2e00f4f0d5fa
 		message.put("code", "200");
 		message.put("msg", "ok");
 		return message;
