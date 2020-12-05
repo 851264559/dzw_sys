@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.accp.dao.ty.TYEmployeeDao;
+import com.accp.pojo.ty.Dimissiontext;
 import com.accp.pojo.ty.Employee;
 import com.accp.pojo.ty.Ment;
 import com.accp.pojo.ty.Postb;
@@ -94,6 +95,12 @@ public class TYEmployeeBiz {
 	//查询离职登记新增里的部门姓名
 	public List<VO> queryVOxz(@Param("ymentid") Integer ymentid){
 		return dao.queryMentxz(ymentid);
+	}
+	
+	//新增离职记录
+	public int addText(String lreason,Integer ymentid,String yname) {
+		dao.saveText(lreason);
+		return dao.updateTextjl(ymentid, yname);
 	}
 	
 }

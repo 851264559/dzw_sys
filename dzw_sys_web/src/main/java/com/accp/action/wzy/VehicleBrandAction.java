@@ -9,28 +9,38 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.accp.biz.wzy.EngineTypeBiz;
-import com.accp.pojo.wzy.EngineType;
+import com.accp.biz.wzy.VehicleBrandBiz;
+import com.accp.pojo.wzy.VehicleBrand;
 
 @RestController
-@RequestMapping("api/enginetype")
-public class EngineTypeAction {
+@RequestMapping("/api/vehiclebrand")
+public class VehicleBrandAction {
+
 	@Autowired
-	private EngineTypeBiz biz;
+	private VehicleBrandBiz biz;
 	
-	@GetMapping("/{enginetypename}")
-	public List<EngineType> queryEngineType(@PathVariable String enginetypename) {
-		return biz.queryEngineType(enginetypename);
+	@PutMapping("vehiclebrand")
+	public Map<String, String> updateVehicleBrand(@RequestBody VehicleBrand vehiclebrand) {
+		Map<String, String> message = new HashMap<String, String>();
+		if(biz.updateVehicleBrand(vehiclebrand)>0) {
+			message.put("code", "200");
+			message.put("msg", "ok");
+		}else {
+			message.put("code", "500");
+			message.put("msg", "on");
+		}
+		return message;
 	}
 	
-	@DeleteMapping("/del/{enginetypeid}")
-	public Map<String, String> delEngineType(@PathVariable Integer enginetypeid){
+	@DeleteMapping("/del/{vbrandid}")
+	public Map<String, String> delVehicleBrand(@PathVariable Integer vbrandid) {
 		Map<String, String> message = new HashMap<String, String>();
-		if(biz.delEngineType(enginetypeid) > 0) {
+		if(biz.delVehicleBrand(vbrandid) > 0) {
 			message.put("code", "200");
 			message.put("msg", "ok");
 		}else {
@@ -41,9 +51,9 @@ public class EngineTypeAction {
 	}
 	
 	@PostMapping("/add")
-	public Map<String, String> addEngineType(@RequestBody EngineType engineType) {
+	public Map<String, String> addVehicleBrand(@RequestBody VehicleBrand vehiclebrand) {
 		Map<String, String> message = new HashMap<String, String>();
-		if(biz.addEngineType(engineType) > 0) {
+		if(biz.addVehicleBrand(vehiclebrand) > 0) {
 			message.put("code", "200");
 			message.put("msg", "ok");
 		}else {
@@ -53,9 +63,13 @@ public class EngineTypeAction {
 		return message;
 	}
 	
-	@GetMapping
-	public List<EngineType> queryAll(){
-		return biz.queryAll();
+	@GetMapping("/{parameter1}")
+	public List<VehicleBrand> queryVehicleBrand(@PathVariable String parameter1){
+		return biz.queryVehicleBrand(parameter1);
 	}
 	
+	@GetMapping
+	public List<VehicleBrand> queryAll(){
+		return biz.queryAll();
+	}
 }

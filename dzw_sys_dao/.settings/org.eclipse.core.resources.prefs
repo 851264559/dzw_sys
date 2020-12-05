@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding//src/main/java/com/accp/pojo/cwl=GBK
+=======
+encoding//src/main/java/com/accp/pojo/ct/Vehicle.java=UTF-8
+>>>>>>> 39c4a9e272d61ebee6f7813efffe2e00f4f0d5fa
 encoding//src/main/java/com/accp/pojo/ty=UTF-8
 encoding//src/test/java=UTF-8

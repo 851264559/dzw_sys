@@ -41,4 +41,9 @@ public class maintenanceItemsAction {
 			public int removeByPrimaryKey(@PathVariable String oid) {
 				return mBiz.removeByPrimaryKey(oid);
 			}
+			
+			@GetMapping("/carNum/{CarNumber}")
+			public List<maintenanceitems> queryMaintenanceitemsByCarNumber(@PathVariable String CarNumber){
+				return mBiz.queryMaintenanceitemsByCarNumber(CarNumber);
+			}
 }
