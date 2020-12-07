@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.accp.biz.cwl.maintenanceItemsBiz;
+import com.accp.pojo.ct.Vehicle;
 import com.accp.pojo.cwl.maintenanceitems;
 
 @RestController
@@ -50,5 +51,15 @@ public class maintenanceItemsAction {
 			@GetMapping("/day/{date}")
 			public List<maintenanceitems> queryMaintenanceitemsByDay(@PathVariable String date){
 				return mBiz.queryMaintenanceitemsByDay(date);
+			}
+			
+			@GetMapping("/license/{license}")
+			public Vehicle selectBylicense(@PathVariable String license){
+				 return mBiz.selectBylicense(license);
+			 }
+			
+			@GetMapping("/dayAndLicense/{date}/{CarNumber}")
+			public List<maintenanceitems> queryMaintenanceitemsByDayAndCarNumber(@PathVariable String date,@PathVariable String CarNumber){
+				 return mBiz.queryMaintenanceitemsByDayAndCarNumber(date, CarNumber);
 			}
 }

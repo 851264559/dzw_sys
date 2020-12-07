@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import com.accp.pojo.ct.Vehicle;
 import com.accp.pojo.cwl.maintenanceitems;
 
 public interface maintenanceitemsMapper {
@@ -26,4 +27,9 @@ public interface maintenanceitemsMapper {
     public List<maintenanceitems> queryMaintenanceitemsByCarNumber(@Param("cNum") String CarNumber);
 
     public List<maintenanceitems> queryMaintenanceitemsByDay(@Param("date") String date);
+    
+    @Select("SELECT * FROM `vehicle` WHERE license = #{license}")
+    public Vehicle selectBylicense(@Param("license") String license);
+    
+    public List<maintenanceitems> queryMaintenanceitemsByDayAndCarNumber(@Param("date") String date,@Param("cNum") String CarNumber);
 }
