@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.accp.dao.cwl.maintenanceitemsMapper;
+import com.accp.pojo.ct.Vehicle;
 import com.accp.pojo.cwl.maintenanceitems;
 
 @Service("maintenanceItemsBiz")
@@ -34,4 +35,16 @@ public class maintenanceItemsBiz {
 			public List<maintenanceitems> queryMaintenanceitemsByCarNumber(String CarNumber){
 				return mM.queryMaintenanceitemsByCarNumber(CarNumber);
 			}
+			
+			public List<maintenanceitems> queryMaintenanceitemsByDay(String date){
+				return mM.queryMaintenanceitemsByDay(date);
+			}
+			
+			 public Vehicle selectBylicense(String license){
+				 return mM.selectBylicense(license);
+			 }
+			 
+			 public List<maintenanceitems> queryMaintenanceitemsByDayAndCarNumber(String date,String CarNumber){
+				 return mM.queryMaintenanceitemsByDayAndCarNumber(date, CarNumber);
+			 }
 }

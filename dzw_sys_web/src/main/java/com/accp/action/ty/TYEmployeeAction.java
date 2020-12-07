@@ -181,6 +181,15 @@ public class TYEmployeeAction {
 	}
 	
 	//新增离职记录
+	@GetMapping("loginout")
+	public Map<String, String> loginout(HttpSession session){
+		session.removeAttribute("EMPLOYEE");
+		session.invalidate();
+		Map<String, String> message = new HashMap<String, String>();
+		message.put("code", "200");
+		message.put("msg", "ok");
+		return message;
+	}
 	@PutMapping("jl/{lreason}/{ymentid}/{yname}")
 	public Map<String, String> updateText(@PathVariable String lreason,@PathVariable Integer ymentid,@PathVariable String yname) {
 		Map<String, String> message = new HashMap<String, String>();
