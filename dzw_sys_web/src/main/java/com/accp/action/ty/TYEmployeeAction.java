@@ -180,6 +180,7 @@ public class TYEmployeeAction {
 		return biz.queryVOxz(ymentid);
 	}
 	
+	//新增离职记录
 	@PutMapping("jl/{lreason}/{ymentid}/{yname}")
 	public Map<String, String> updateText(@PathVariable String lreason,@PathVariable Integer ymentid,@PathVariable String yname) {
 		Map<String, String> message = new HashMap<String, String>();
@@ -187,6 +188,18 @@ public class TYEmployeeAction {
 		message.put("code", "200");
 		message.put("msg", "ok");
 		return message;
+	}
+	
+	//判断该部门是否有人
+	@GetMapping("bm/{ymentid}")
+	public int getSfy(@PathVariable Integer ymentid) {
+		return biz.querySfy(ymentid);
+	}
+	
+	//判断该职位是否有人
+	@GetMapping("zw/{ypostid}")
+	public int getZw(@PathVariable Integer ypostid) {
+		return biz.queryZw(ypostid);
 	}
 	
 }
