@@ -46,4 +46,9 @@ public class maintenanceItemsAction {
 			public List<maintenanceitems> queryMaintenanceitemsByCarNumber(@PathVariable String CarNumber){
 				return mBiz.queryMaintenanceitemsByCarNumber(CarNumber);
 			}
+			
+			@GetMapping("/day/{date}")
+			public List<maintenanceitems> queryMaintenanceitemsByDay(@PathVariable String date){
+				return mBiz.queryMaintenanceitemsByDay(date);
+			}
 }

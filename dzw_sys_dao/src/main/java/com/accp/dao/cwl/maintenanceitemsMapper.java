@@ -24,4 +24,6 @@ public interface maintenanceitemsMapper {
     public List<maintenanceitems> queryMaintenanceitemsByWorkOrderNumber(@Param("wONum") String WorkOrderNumber);
     
     public List<maintenanceitems> queryMaintenanceitemsByCarNumber(@Param("cNum") String CarNumber);
+
+    public List<maintenanceitems> queryMaintenanceitemsByDay(@Param("date") String date);
 }

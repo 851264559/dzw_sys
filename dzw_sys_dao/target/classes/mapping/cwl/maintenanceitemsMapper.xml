@@ -203,4 +203,11 @@
 	JOIN testoncompletion t ON m.`workOrderNumber` = t.`repairOrder`
 	WHERE t.`licensePlateNumber` = #{cNum}	 
   </select>
+  
+  <select id="queryMaintenanceitemsByDay" resultMap="BaseResultMap">
+  	SELECT m.* FROM 
+	maintenanceitems m
+	JOIN testoncompletion t ON m.`workOrderNumber` = t.`repairOrder`
+	WHERE t.`timeOfCompletion` = #{date};
+  </select>
 </mapper>

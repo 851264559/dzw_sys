@@ -34,4 +34,8 @@ public class maintenanceItemsBiz {
 			public List<maintenanceitems> queryMaintenanceitemsByCarNumber(String CarNumber){
 				return mM.queryMaintenanceitemsByCarNumber(CarNumber);
 			}
+			
+			public List<maintenanceitems> queryMaintenanceitemsByDay(String date){
+				return mM.queryMaintenanceitemsByDay(date);
+			}
 }
