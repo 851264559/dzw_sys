@@ -180,6 +180,7 @@ public class TYEmployeeAction {
 		return biz.queryVOxz(ymentid);
 	}
 	
+	//新增离职记录
 	@GetMapping("loginout")
 	public Map<String, String> loginout(HttpSession session){
 		session.removeAttribute("EMPLOYEE");
@@ -196,6 +197,18 @@ public class TYEmployeeAction {
 		message.put("code", "200");
 		message.put("msg", "ok");
 		return message;
+	}
+	
+	//判断该部门是否有人
+	@GetMapping("bm/{ymentid}")
+	public int getSfy(@PathVariable Integer ymentid) {
+		return biz.querySfy(ymentid);
+	}
+	
+	//判断该职位是否有人
+	@GetMapping("zw/{ypostid}")
+	public int getZw(@PathVariable Integer ypostid) {
+		return biz.queryZw(ypostid);
 	}
 	
 }
