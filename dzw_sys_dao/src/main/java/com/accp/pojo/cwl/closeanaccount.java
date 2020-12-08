@@ -50,6 +50,51 @@ public class closeanaccount {
 
     private Date timeofcompletion;//完工时间
 
+    private String haveread;//是否已读
+
+    @Override
+    public String toString() {
+        return "closeanaccount{" +
+                "id=" + id +
+                ", saleno='" + saleno + '\'' +
+                ", receiptstype='" + receiptstype + '\'' +
+                ", clearing='" + clearing + '\'' +
+                ", clearingmoney=" + clearingmoney +
+                ", principal='" + principal + '\'' +
+                ", license='" + license + '\'' +
+                ", zhuangtai='" + zhuangtai + '\'' +
+                ", customername='" + customername + '\'' +
+                ", frameno='" + frameno + '\'' +
+                ", vehiclemodel='" + vehiclemodel + '\'' +
+                ", timeofcompletion=" + timeofcompletion +
+                ", haveread='" + haveread + '\'' +
+                '}';
+    }
+
+    public closeanaccount(Integer id, String saleno, String receiptstype, String clearing, Float clearingmoney, String principal, String license, String zhuangtai, String customername, String frameno, String vehiclemodel, Date timeofcompletion, String haveread) {
+        this.id = id;
+        this.saleno = saleno;
+        this.receiptstype = receiptstype;
+        this.clearing = clearing;
+        this.clearingmoney = clearingmoney;
+        this.principal = principal;
+        this.license = license;
+        this.zhuangtai = zhuangtai;
+        this.customername = customername;
+        this.frameno = frameno;
+        this.vehiclemodel = vehiclemodel;
+        this.timeofcompletion = timeofcompletion;
+        this.haveread = haveread;
+    }
+
+    public String getHaveread() {
+        return haveread;
+    }
+
+    public void setHaveread(String haveread) {
+        this.haveread = haveread;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -157,13 +202,5 @@ public class closeanaccount {
 		this.timeofcompletion = timeofcompletion;
 	}
 
-	@Override
-	public String toString() {
-		return "closeanaccount [id=" + id + ", saleno=" + saleno + ", receiptstype=" + receiptstype + ", clearing="
-				+ clearing + ", clearingmoney=" + clearingmoney + ", principal=" + principal + ", license=" + license
-				+ ", customername=" + customername + ", frameno=" + frameno + ", vehiclemodel=" + vehiclemodel
-				+ ", timeofcompletion=" + timeofcompletion + "]";
-	}
-    
-    
+
 }
