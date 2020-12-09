@@ -103,4 +103,14 @@ public class TYEmployeeBiz {
 		return dao.updateTextjl(ymentid, yname);
 	}
 	
+	//判断该部门是否有人
+	public int querySfy(@Param("ymentid") Integer ymentid){
+		return dao.querySfy(ymentid);
+	}
+	
+	//判断该职位是否有人
+	public int queryZw(@Param("ypostid") Integer ypostid){
+		return dao.queryZw(ypostid);
+	}
+	
 }

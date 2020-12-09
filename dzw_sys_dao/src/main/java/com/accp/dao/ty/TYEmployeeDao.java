@@ -122,8 +122,28 @@ public interface TYEmployeeDao {
 	@Insert("INSERT INTO `dimissiontext` VALUE(0,#{lreason},NOW())")
 	public int saveText(@Param("lreason") String lreason);
 	
+	/**
+	 * 离职登记回滚
+	 * @param ymentid
+	 * @param yname
+	 * @return
+	 */
 	@Update("UPDATE `employee` SET `yquitid`=1,`yljlid`=(SELECT lid FROM `dimissiontext` ORDER BY lid DESC LIMIT 1)\r\n" + 
 			" WHERE `ymentid`=#{ymentid} AND `yname`=#{yname}")
 	public int updateTextjl(@Param("ymentid") Integer ymentid,@Param("yname") String yname);
+	
+	//判断该部门是否有人
+	@Select("SELECT COUNT(e.`ymentid`) FROM `employee` e\r\n" + 
+			" INNER JOIN `ment` m ON m.`bid`=e.`ymentid`\r\n" + 
+			" INNER JOIN `postb` p ON p.`zid`=e.`ypostid`\r\n" + 
+			" WHERE e.`ymentid`=#{ymentid}")
+	public int querySfy(@Param("ymentid") Integer ymentid);
+	
+	//判断该职位是否有人
+	@Select("SELECT COUNT(e.`ypostid`)FROM `employee` e\r\n" + 
+			" INNER JOIN `ment` m ON m.`bid`=e.`ymentid`\r\n" + 
+			" INNER JOIN `postb` p ON p.`zid`=e.`ypostid`\r\n" + 
+			" WHERE e.`ypostid`=#{ypostid}")
+	public int queryZw(@Param("ypostid") Integer ypostid);
 	
 }
