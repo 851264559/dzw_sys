@@ -23,5 +23,9 @@ public class testOnCompletionBiz {
 				return tBiz.updateByPrimaryKeySelective(record);
 			}
 			
+			public int addSelective(TestOnCompletion record) {
+				return tBiz.insertSelective(record);
+			}
+			
 			
 }

@@ -3,6 +3,7 @@ package com.accp.action.cwl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,5 +27,10 @@ public class offSiteRescueSheetAction {
 			@PutMapping("/modify")
 			public Integer modifyOffSiteRescueSheetInfoSelective(@RequestBody OffSiteRescueSheet record) {
 				return oBiz.modifyOffSiteRescueSheetInfoSelective(record);
+			}
+			
+			@PostMapping("/add")
+			public int addSelective(@RequestBody OffSiteRescueSheet record) {
+				return oBiz.addSelective(record);
 			}
 }

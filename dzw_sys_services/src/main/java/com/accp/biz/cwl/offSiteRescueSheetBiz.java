@@ -19,4 +19,8 @@ public class offSiteRescueSheetBiz {
 			public Integer modifyOffSiteRescueSheetInfoSelective(OffSiteRescueSheet record) {
 				return oM.updateByPrimaryKeySelective(record);
 			}
+			
+			public int addSelective(OffSiteRescueSheet record) {
+				return oM.insertSelective(record);
+			}
 }

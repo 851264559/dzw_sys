@@ -14,6 +14,7 @@
     <result column="frameNo" property="frameno" jdbcType="VARCHAR" />
     <result column="vehicleModel" property="vehiclemodel" jdbcType="VARCHAR" />
     <result column="timeOfCompletion" property="timeofcompletion" jdbcType="DATE" />
+    <result column="haveread" property="haveread" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, saleNo, receiptsType, clearing, clearingMoney, principal, license, customerName, 
@@ -22,7 +23,12 @@
   <select id="selectAll" resultMap="BaseResultMap">
     select *
     from closeanaccount
-    where zhuangtai = #{zt}
+    where zhuangtai = #{cc.zhuangtai} AND timeOfCompletion BETWEEN #{cc.date1} AND #{cc.date2}
+  </select>
+  <select id="selectHaveread" resultMap="BaseResultMap">
+    SELECT *
+    FROM closeanaccount
+    WHERE haveread = "未读"
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -36,11 +42,11 @@
   </delete>
   <insert id="insert" parameterType="com.accp.pojo.cwl.closeanaccount" >
     insert into closeanaccount (id, saleNo, receiptsType, 
-      clearing, clearingMoney, principal, 
+      clearing,zhuangtai ,clearingMoney, principal, 
       license, customerName, frameNo, 
       vehicleModel, timeOfCompletion)
     values (#{id,jdbcType=INTEGER}, #{saleno,jdbcType=VARCHAR}, #{receiptstype,jdbcType=VARCHAR}, 
-      #{clearing,jdbcType=VARCHAR}, #{clearingmoney,jdbcType=REAL}, #{principal,jdbcType=VARCHAR}, 
+      #{clearing,jdbcType=VARCHAR}, #{zhuangtai,jdbcType=VARCHAR},#{clearingmoney,jdbcType=REAL}, #{principal,jdbcType=VARCHAR}, 
       #{license,jdbcType=VARCHAR}, #{customername,jdbcType=VARCHAR}, #{frameno,jdbcType=VARCHAR}, 
       #{vehiclemodel,jdbcType=VARCHAR}, #{timeofcompletion,jdbcType=DATE})
   </insert>
@@ -55,6 +61,9 @@
       </if>
       <if test="receiptstype != null" >
         receiptsType,
+      </if>
+      <if test="zhuangtai != null" >
+        zhuangtai,
       </if>
       <if test="clearing != null" >
         clearing,
@@ -90,6 +99,9 @@
       </if>
       <if test="receiptstype != null" >
         #{receiptstype,jdbcType=VARCHAR},
+      </if>
+      <if test="zhuangtai != null" >
+        #{zhuangtai,jdbcType=VARCHAR},
       </if>
       <if test="clearing != null" >
         #{clearing,jdbcType=VARCHAR},
