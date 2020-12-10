@@ -14,6 +14,7 @@
     <result column="frameNo" property="frameno" jdbcType="VARCHAR" />
     <result column="vehicleModel" property="vehiclemodel" jdbcType="VARCHAR" />
     <result column="timeOfCompletion" property="timeofcompletion" jdbcType="DATE" />
+    <result column="haveread" property="haveread" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, saleNo, receiptsType, clearing, clearingMoney, principal, license, customerName, 
@@ -22,7 +23,12 @@
   <select id="selectAll" resultMap="BaseResultMap">
     select *
     from closeanaccount
-    where zhuangtai = #{zt}
+    where zhuangtai = #{cc.zhuangtai} AND timeOfCompletion BETWEEN #{cc.date1} AND #{cc.date2}
+  </select>
+  <select id="selectHaveread" resultMap="BaseResultMap">
+    SELECT *
+    FROM closeanaccount
+    WHERE haveread = "未读"
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 

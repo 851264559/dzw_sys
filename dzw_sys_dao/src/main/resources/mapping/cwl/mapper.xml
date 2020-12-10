@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.accp.dao.cwl.bzjg">
+
+	<select id="querybzjg" resultType="com.accp.pojo.cwl.bzjgVO">
+		SELECT s.aid,s.`aName`,s.`aSex`,s.`aPhone`,t.`tename`  
+		FROM `shiftthemechanic` s
+		INNER JOIN `team` t ON t.`teid`=s.`steam`
+		INNER JOIN `staremployees` st ON st.`id`=s.`starLevel`
+		<where>
+			<if test="steam!=0">
+			 s.`steam`=#{steam}
+			</if>
+		</where>
+	</select>
+	
+</mapper>    
