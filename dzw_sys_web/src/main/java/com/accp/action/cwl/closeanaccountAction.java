@@ -1,5 +1,6 @@
 package com.accp.action.cwl;
 
+import com.accp.vo.ct.CloseanaccountVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,9 +20,9 @@ public class closeanaccountAction {
 				return cBiz.addSelective(record);
 			}
 
-			@GetMapping("/selectAll/{zt}")
-			public List<closeanaccount> selectAll(@PathVariable String zt){
-				return cBiz.selectAll(zt);
+			@PostMapping("/selectAll")
+			public List<closeanaccount> selectAll(@RequestBody CloseanaccountVO cc){
+				return cBiz.selectAll(cc);
 			}
 
 			@PutMapping("/update")
