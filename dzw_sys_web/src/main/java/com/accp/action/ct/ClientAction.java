@@ -2,6 +2,8 @@ package com.accp.action.ct;
 
 import com.accp.biz.ct.ClientServices;
 import com.accp.pojo.ct.Client;
+import com.accp.vo.ct.ClientVo;
+import com.accp.vo.ct.MemberVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,6 +38,24 @@ public class ClientAction {
     }
 
     /**
+     * 查询会员
+     * @param clientVo
+     * @return
+     */
+    @PostMapping("/selectMember")
+    public List<Client> selectMember(@RequestBody ClientVo clientVo){
+        return services.selectMember(clientVo);
+    }
+
+    /**
+     * 查询非会员和员工的用户
+     * @return
+     */
+    @GetMapping("/selectMemberVo")
+    public List<MemberVo> selectMemberVo(){
+        return services.selectMemberVo();
+    }
+    /**
      * 删除用户
      * @param id
      * @return
@@ -56,6 +76,19 @@ public class ClientAction {
     @PutMapping("/updateClient")
     public String updateClient(@RequestBody Client client){
         if(services.updateClient(client)>0){
+            return "true";
+        }
+        return "false";
+    }
+
+    /**
+     * 会员操作
+     * @param client
+     * @return
+     */
+    @PutMapping("/updateMember")
+    public String updateMember(@RequestBody Client client){
+        if(services.updateMember(client)>0){
             return "true";
         }
         return "false";

@@ -1,5 +1,6 @@
 package com.accp.biz.cwl;
 
+import com.accp.vo.ct.CloseanaccountVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
@@ -17,8 +18,8 @@ public class closeanaccountBiz {
 			return cM.insertSelective(record);
 		}
 
-		public List<closeanaccount> selectAll(String zt){
-			return cM.selectAll(zt);
+		public List<closeanaccount> selectAll(CloseanaccountVO cc){
+			return cM.selectAll(cc);
 		}
 
 		public int updateZhuangtai(closeanaccount closeanaccount){
