@@ -25,4 +25,11 @@ public class closeanaccountBiz {
 		public int updateZhuangtai(closeanaccount closeanaccount){
 			return cM.updateZhuangtai(closeanaccount);
 		}
+
+		public Map<String,Integer> selectCount(){
+			Map<String,Integer> map=new HashMap<>();
+			map.put("count1",cM.selectCount1("现金","已结算"));
+			map.put("count2",cM.selectCount2("已结算"));
+			return map;
+		}
 }

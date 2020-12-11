@@ -32,4 +32,9 @@ public class closeanaccountAction {
 				}
 				return false;
 			}
+
+			@GetMapping("/selectCount")
+			public Map<String,Integer> selectCount(){
+				return cBiz.selectCount();
+			}
 }

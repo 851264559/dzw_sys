@@ -65,9 +65,6 @@
       <if test="zhuangtai != null" >
         zhuangtai,
       </if>
-      <if test="clearing != null" >
-        clearing,
-      </if>
       <if test="clearingmoney != null" >
         clearingMoney,
       </if>
@@ -102,9 +99,6 @@
       </if>
       <if test="zhuangtai != null" >
         #{zhuangtai,jdbcType=VARCHAR},
-      </if>
-      <if test="clearing != null" >
-        #{clearing,jdbcType=VARCHAR},
       </if>
       <if test="clearingmoney != null" >
         #{clearingmoney,jdbcType=REAL},
@@ -167,7 +161,7 @@
   </update>
   <update id="updateZhuangtai" parameterType="com.accp.pojo.cwl.closeanaccount" >
     update closeanaccount
-    set zhuangtai=#{zhuangtai}
+    set zhuangtai=#{zhuangtai},clearing=#{clearing}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.accp.pojo.cwl.closeanaccount" >
