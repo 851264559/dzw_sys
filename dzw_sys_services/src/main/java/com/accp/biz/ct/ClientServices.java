@@ -94,6 +94,20 @@ public class ClientServices {
         }
     }
     /**
+     * 修改用户表
+     * @param client
+     * @return
+     */
+    @Transactional
+    public int updateClient2(Client client){
+        try {
+            clientMapper.updateByPrimaryKeySelective(client);
+            return 1;
+        }catch (Exception e){
+            return 0;
+        }
+    }
+    /**
      * 会员操作
      * @param client
      * @return
@@ -101,5 +115,14 @@ public class ClientServices {
     @Transactional
     public int updateMember(Client client){
         return clientMapper.updateMember(client);
+    }
+
+    /**
+     * 根据姓名查询
+     * @param name
+     * @return
+     */
+    public Client selectByName(String name){
+        return clientMapper.selectByName(name);
     }
 }

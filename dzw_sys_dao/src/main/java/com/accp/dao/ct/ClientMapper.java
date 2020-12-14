@@ -4,6 +4,7 @@ import com.accp.pojo.ct.Client;
 import com.accp.vo.ct.ClientVo;
 import com.accp.vo.ct.MemberVo;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.lang.reflect.Member;
 import java.util.List;
@@ -56,4 +57,11 @@ public interface ClientMapper {
      * @return
      */
     int updateMember(Client record);
+
+    /**
+     * 根据名称查询
+     * @return
+     */
+    @Select("SELECT * FROM `client` WHERE linkman =#{0}")
+    Client selectByName(String name);
 }
