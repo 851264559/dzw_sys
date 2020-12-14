@@ -48,7 +48,7 @@ public class PayAction {
         //请求参数可查阅【电脑网站支付的API文档-alipay.trade.page.pay-请求参数】章节
 
         //请求
-        String result = alipayClient.pageExecute(alipayRequest).getBody();;
+        String result = alipayClient.pageExecute(alipayRequest).getBody();
         return result;
     }
 }
