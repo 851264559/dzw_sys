@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.wzy.ISmallRepairDao">
+	<resultMap id="small" type="com.accp.pojo.wzy.SmallRepair" autoMapping="true">
+		<id column="sid" property="sid" jdbcType="INTEGER" />
+		<collection property="smallrepair" column="gid" select="sm"></collection>
+	</resultMap>
+	<insert id="addSmallRepair">
+		INSERT INTO `dzw_database`.`smallrepair` (`gid`, `sname`) 
+		VALUES ( #{smallrepair.gid}, #{smallrepair.sname})
+	</insert>
+	
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.wzy.IRepairDao">
+	<resultMap id="repair" type="com.accp.pojo.wzy.Repair" autoMapping="true">
+		<id column="rid" property="rid" jdbcType="INTEGER" />
+	</resultMap>
+	<select id="queryAll" resultMap="repair">
+		SELECT * FROM `repair`
+	</select>
+	<select id="queryRepairByRid">
+		SELECT * FROM `repair` where rid=#{rid}
+	</select>
+	<select id="queryRepairByXtype" resultMap="repair">
+		SELECT * FROM `repair` where xtype=#{xtype}
+	</select>
+	<delete id="delRepair">
+		delete from repair where rid=#{rid}
+	</delete>
+	<insert id="addRepair">
+		INSERT INTO `dzw_database`.`repair` (`xtype`,`repairname`,`repevent`,`rjbmoney`,`rhymoney`,`rvipmoney`,`repxyperice`) 
+		VALUES ( #{repair.xtype}, #{repair.repairname},#{repair.repevent},#{repair.rjbmoney},#{repair.rhymoney},#{repair.rvipmoney},#{repair.repxyperice})
+	</insert>
+	<update id="updateRepair">
+		UPDATE `dzw_database`.`repair` 
+		SET `xtype` = #{repair.xtype},`repairname` = #{repair.repairname},`repevent` = #{repair.repevent},`rjbmoney` = #{repair.rjbmoney},`rhymoney` = #{repair.rhymoney},`rvipmoney` = #{repair.rvipmoney},`repxyperice` = #{repair.repxyperice} 
+		WHERE `rid` = #{repair.rid} ;
+	</update>
+</mapper>

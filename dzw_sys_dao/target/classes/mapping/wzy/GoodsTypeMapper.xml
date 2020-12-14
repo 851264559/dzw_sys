@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.wzy.IGoodsTypeDao">
+	<resultMap id="goods" type="com.accp.pojo.wzy.GoodsType" autoMapping="true">
+		<id column="gid" property="gid" jdbcType="INTEGER" />
+		<collection property="smallrepair" column="gid" select="sm"></collection>
+	</resultMap>
+	<select id="queryAll" resultMap="goods">
+			SELECT   `sid`,`sname`, g.`gid`,`gname`,`fatherType`FROM `smallrepair` s 
+				RIGHT JOIN `goodstype` g ON s.`gid`=g.`gid` GROUP BY g.`gid`
+	</select>
+	<select id="sm" resultType="SmallRepair">
+		SELECT * FROM `smallrepair`  where  gid=#{gid}
+	</select>
+</mapper>
