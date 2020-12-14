@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.accp.biz.ty.TYEmployeeBiz;
 import com.accp.biz.ty.TYMentBiz;
 import com.accp.pojo.cyj.Function;
+import com.accp.pojo.ty.Dimissiontext;
 import com.accp.pojo.ty.Employee;
 import com.accp.pojo.ty.Ment;
 import com.accp.pojo.ty.Postb;
@@ -175,8 +176,39 @@ public class TYEmployeeAction {
 	//查询离职登记新增里的部门姓名
 	@GetMapping("xzlz/{ymentid}")
 	public List<VO> getMentxz(@PathVariable Integer ymentid) {
-		System.out.println("a "+ymentid);
+		//System.out.println("a "+ymentid);
 		return biz.queryVOxz(ymentid);
+	}
+	
+	//新增离职记录
+	@GetMapping("loginout")
+	public Map<String, String> loginout(HttpSession session){
+		session.removeAttribute("EMPLOYEE");
+		session.invalidate();
+		Map<String, String> message = new HashMap<String, String>();
+		message.put("code", "200");
+		message.put("msg", "ok");
+		return message;
+	}
+	@PutMapping("jl/{lreason}/{ymentid}/{yname}")
+	public Map<String, String> updateText(@PathVariable String lreason,@PathVariable Integer ymentid,@PathVariable String yname) {
+		Map<String, String> message = new HashMap<String, String>();
+		biz.addText(lreason, ymentid, yname);
+		message.put("code", "200");
+		message.put("msg", "ok");
+		return message;
+	}
+	
+	//判断该部门是否有人
+	@GetMapping("bm/{ymentid}")
+	public int getSfy(@PathVariable Integer ymentid) {
+		return biz.querySfy(ymentid);
+	}
+	
+	//判断该职位是否有人
+	@GetMapping("zw/{ypostid}")
+	public int getZw(@PathVariable Integer ypostid) {
+		return biz.queryZw(ypostid);
 	}
 	
 }

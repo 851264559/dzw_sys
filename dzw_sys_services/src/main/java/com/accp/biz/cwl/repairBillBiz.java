@@ -1,6 +1,5 @@
 package com.accp.biz.cwl;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +14,9 @@ public class repairBillBiz {
 			
 			public RepairBill selectRepairBillInfosByRoddnumber(String roddnumber) {
 				return rM.selectRepairBillInfosByRoddnumber(roddnumber);
+			}
+			
+			public int addSelective(RepairBill record) {
+				return rM.insert(record);
 			}
 }

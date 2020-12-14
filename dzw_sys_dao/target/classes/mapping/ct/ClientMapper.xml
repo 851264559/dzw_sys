@@ -17,6 +17,10 @@
     <result column="earnest" property="earnest" />
     <collection column="cId" property="vehicles" select="selectBycId"/>
   </resultMap>
+  <resultMap id="MemberMap" type="com.accp.vo.ct.MemberVo" >
+    <id column="cId" property="cid" jdbcType="VARCHAR" />
+    <result column="cName" property="value" jdbcType="VARCHAR" />
+  </resultMap>
   <sql id="Base_Column_List" >
     cId, cName, detailedAddress, linkman, phone, userType, cardNo, admissionDate, expireDate, 
     remark, nowDate, integral, earnest
@@ -26,6 +30,21 @@
   <select id="selectAllClient" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select *
     from client
+  </select>
+
+  <select id="selectMember" resultType="client">
+    SELECT *
+    FROM CLIENT
+    WHERE userType=#{clientVo.userType}
+    <if test="clientVo.bianhao!=null and clientVo.bianhao!=''">
+        and cardno=#{clientVo.bianhao}
+    </if>
+  </select>
+
+  <select id="selectMemberVo" resultMap="MemberMap">
+    SELECT *
+    FROM CLIENT
+    WHERE userType="普通用户"
   </select>
 
   <select id="selectBycId" resultType="vehicle">
@@ -99,7 +118,7 @@
         #{cardno},
       </if>
       <if test="admissiondate != null" >
-        #{admissiondate},
+        NOW(),
       </if>
       <if test="expiredate != null" >
         #{expiredate,jdbcType=DATE},
@@ -138,7 +157,7 @@
         cardNo = #{cardno,jdbcType=VARCHAR},
       </if>
       <if test="admissiondate != null" >
-        admissionDate = #{admissiondate,jdbcType=DATE},
+        admissionDate = NOW(),
       </if>
       <if test="expiredate != null" >
         expireDate = #{expiredate,jdbcType=DATE},
@@ -155,6 +174,17 @@
       <if test="earnest != null" >
         earnest = #{earnest,jdbcType=REAL},
       </if>
+    </set>
+    where cId = #{cid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateMember">
+    update client
+    <set >
+        userType = #{usertype,jdbcType=INTEGER},
+        cardNo = #{cardno,jdbcType=VARCHAR},
+        admissionDate = #{admissiondate},
+        integral = #{integral,jdbcType=INTEGER},
+        earnest = #{earnest,jdbcType=REAL},
     </set>
     where cId = #{cid,jdbcType=VARCHAR}
   </update>

@@ -2,6 +2,9 @@ package com.accp.action.ct;
 
 import com.accp.biz.ct.ClientServices;
 import com.accp.pojo.ct.Client;
+import com.accp.vo.ct.ClientVo;
+import com.accp.vo.ct.MemberVo;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,6 +39,24 @@ public class ClientAction {
     }
 
     /**
+     * 查询会员
+     * @param clientVo
+     * @return
+     */
+    @PostMapping("/selectMember")
+    public List<Client> selectMember(@RequestBody ClientVo clientVo){
+        return services.selectMember(clientVo);
+    }
+
+    /**
+     * 查询非会员和员工的用户
+     * @return
+     */
+    @GetMapping("/selectMemberVo")
+    public List<MemberVo> selectMemberVo(){
+        return services.selectMemberVo();
+    }
+    /**
      * 删除用户
      * @param id
      * @return
@@ -59,6 +80,36 @@ public class ClientAction {
             return "true";
         }
         return "false";
+    }
+    /**
+     * 修改用户表
+     * @param client
+     * @return
+     */
+    @PutMapping("/updateClient2")
+    public String updateClient2(@RequestBody Client client){
+        if(services.updateClient2(client)>0){
+            return "true";
+        }
+        return "false";
+    }
+
+    /**
+     * 会员操作
+     * @param client
+     * @return
+     */
+    @PutMapping("/updateMember")
+    public String updateMember(@RequestBody Client client){
+        if(services.updateMember(client)>0){
+            return "true";
+        }
+        return "false";
+    }
+
+    @GetMapping("/selectByName/{name}")
+    public Client selectByName(@PathVariable String name){
+        return services.selectByName(name);
     }
 
 }

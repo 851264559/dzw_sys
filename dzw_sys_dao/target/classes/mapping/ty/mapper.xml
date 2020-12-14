@@ -32,8 +32,6 @@
 	</select>
 
 
-	<!--Employee login(@Param("yaccount")String yaccount,@Param("ypwd")String 
-		ypwd); -->
 	<select id="login" resultMap="empMap">
 		SELECT * FROM `employee` e
 		INNER JOIN `postb` p ON p.`zid`=e.`ypostid`

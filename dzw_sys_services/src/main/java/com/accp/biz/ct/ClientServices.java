@@ -4,6 +4,8 @@ import com.accp.dao.ct.ClientMapper;
 import com.accp.dao.ct.VehicleMapper;
 import com.accp.pojo.ct.Client;
 import com.accp.pojo.ct.Vehicle;
+import com.accp.vo.ct.ClientVo;
+import com.accp.vo.ct.MemberVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -56,6 +58,22 @@ public class ClientServices {
     }
 
     /**
+     * 查询会员
+     * @param clientVo
+     * @return
+     */
+    public List<Client> selectMember(ClientVo clientVo){
+        return clientMapper.selectMember(clientVo);
+    }
+
+    /**
+     * 查询非会员和员工的用户
+     * @return
+     */
+    public List<MemberVo> selectMemberVo(){
+        return clientMapper.selectMemberVo();
+    }
+    /**
      * 修改用户表
      * @param client
      * @return
@@ -74,5 +92,37 @@ public class ClientServices {
         }catch (Exception e){
             return 0;
         }
+    }
+    /**
+     * 修改用户表
+     * @param client
+     * @return
+     */
+    @Transactional
+    public int updateClient2(Client client){
+        try {
+            clientMapper.updateByPrimaryKeySelective(client);
+            return 1;
+        }catch (Exception e){
+            return 0;
+        }
+    }
+    /**
+     * 会员操作
+     * @param client
+     * @return
+     */
+    @Transactional
+    public int updateMember(Client client){
+        return clientMapper.updateMember(client);
+    }
+
+    /**
+     * 根据姓名查询
+     * @param name
+     * @return
+     */
+    public Client selectByName(String name){
+        return clientMapper.selectByName(name);
     }
 }

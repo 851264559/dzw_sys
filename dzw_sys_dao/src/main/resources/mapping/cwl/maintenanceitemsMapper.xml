@@ -196,4 +196,25 @@
       freeOfChargeFor = #{freeofchargefor,jdbcType=VARCHAR}
     where oid = #{oid,jdbcType=VARCHAR}
   </update>
+  
+  <select id="queryMaintenanceitemsByCarNumber" resultMap="BaseResultMap">
+  	SELECT m.* FROM 
+	maintenanceitems m
+	JOIN testoncompletion t ON m.`workOrderNumber` = t.`repairOrder`
+	WHERE t.`licensePlateNumber` = #{cNum};	  
+  </select>
+  
+  <select id="queryMaintenanceitemsByDay" resultMap="BaseResultMap">
+  	SELECT m.* FROM 
+	maintenanceitems m
+	JOIN testoncompletion t ON m.`workOrderNumber` = t.`repairOrder`
+	WHERE t.`timeOfCompletion` = #{date};
+  </select>
+  
+  <select id="queryMaintenanceitemsByDayAndCarNumber" resultMap="BaseResultMap">
+  	SELECT m.* FROM 
+	maintenanceitems m
+	JOIN testoncompletion t ON m.`workOrderNumber` = t.`repairOrder`
+	WHERE t.`timeOfCompletion` = #{date} and t.`licensePlateNumber` = #{cNum};
+  </select>
 </mapper>
